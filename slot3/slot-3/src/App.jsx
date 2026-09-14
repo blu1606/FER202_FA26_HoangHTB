@@ -6,11 +6,20 @@ import './App.css'
 import About from './About'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const user1 = {
+    name: "user1",
+    email: "email+user1@gmail.com"
+  }
+
+  const user2 = {
+    name: "user2",
+    email: "email+user2@gmail.com"
+  }
 
   return (
     <>
-      <About name="Hoang" username="blu" />
+      <About user={user1} />
+      <About user={user2} />
     </> //FER202_FA26_HoangHTB
   )
 }
