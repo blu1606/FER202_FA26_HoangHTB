@@ -6,13 +6,15 @@ function App() {
   const product1 = {
     name: "product1",
     price: 1000,
-    tag: "test"
+    tag: "test",
+    avatar: "/image/pizza-1.jpg"
   }
 
   const product2 = {
     name: "product2",
     price: 1001,
-    tag: "test2"
+    tag: "test2",
+    avatar: "/image/pizza-2.jpg"
   }
   return (
     <>
