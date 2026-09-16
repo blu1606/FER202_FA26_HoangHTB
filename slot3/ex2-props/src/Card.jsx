@@ -1,41 +1,27 @@
-import './Card.css';
+import { Card, Button } from 'react-bootstrap';
 
-function Card({ product, pizza }) {
-  const item = product || pizza || {};
-
-  const formatPrice = (price) => {
-    if (typeof price === 'number') {
-      return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
-    }
-    return price;
-  };
-
+function CardItem({ product }) {
   return (
-    <div className="pizza-card">
-      <div className="card-image-wrapper">
-        <img
-          src={item.avatar}
-          alt={item.name}
-          className="card-image"
-          loading="lazy"
-        />
-        {item.tag && <span className="card-tag">{item.tag}</span>}
-      </div>
-
-      <div className="card-body">
-        <h3 className="card-title">{item.name}</h3>
-        {item.description && (
-          <p className="card-description">{item.description}</p>
-        )}
-        <div className="card-footer">
-          <span className="card-price">{formatPrice(item.price)}</span>
-          <button type="button" className="btn-order">
-            Chọn mua
-          </button>
+    <Card style={{ width: '18rem' }} className="h-100 shadow-sm">
+      <Card.Img
+        variant="top"
+        src={product.avatar}
+        style={{ height: '180px', objectFit: 'cover' }}
+      />
+      <Card.Body className="d-flex flex-column">
+        <Card.Title>{product.name}</Card.Title>
+        <Card.Text className="text-muted flex-grow-1">
+          {product.description}
+        </Card.Text>
+        <div className="d-flex justify-content-between align-items-center mt-3">
+          <span className="text-danger fw-bold">{product.price} đ</span>
+          <Button variant="primary" size="sm">
+            Mua ngay
+          </Button>
         </div>
-      </div>
-    </div>
+      </Card.Body>
+    </Card>
   );
 }
 
-export default Card;
+export default CardItem;
