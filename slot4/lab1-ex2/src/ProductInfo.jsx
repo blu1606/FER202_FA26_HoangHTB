@@ -5,7 +5,15 @@ import Button from 'react-bootstrap/Button';
 function ProductInfo({ name, price, tag, avatar }) {
   return (
     <Card className="h-100 shadow-sm position-relative">
-      <Card.Img variant="top" src={avatar} alt={name} />
+      <Card.Img
+        variant="top"
+        src={avatar}
+        alt={name}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&auto=format&fit=crop&q=80';
+        }}
+      />
       <Card.Body className="d-flex flex-column">
         <Card.Title>{name}</Card.Title>
         <Card.Text className="text-muted">

@@ -6,6 +6,11 @@ function CardItem({ product }) {
       <Card.Img
         variant="top"
         src={product.avatar}
+        alt={product.name}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&auto=format&fit=crop&q=80';
+        }}
         style={{ height: '180px', objectFit: 'cover' }}
       />
       <Card.Body className="d-flex flex-column">

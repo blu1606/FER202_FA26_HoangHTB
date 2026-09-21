@@ -5,7 +5,15 @@ import Button from 'react-bootstrap/Button';
 function ProductInfo({ name, price, tag, avatar }) {
   return (
     <Card style={{ width: '18rem', margin: '1rem' }}>
-      <Card.Img variant="top" src={avatar} />
+      <Card.Img
+        variant="top"
+        src={avatar}
+        alt={name}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&auto=format&fit=crop&q=80';
+        }}
+      />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>

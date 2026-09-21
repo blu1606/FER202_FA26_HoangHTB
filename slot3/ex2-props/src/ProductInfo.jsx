@@ -7,7 +7,15 @@ function ProductInfo({ name, price, tag, avatar, product }) {
 
   return (
     <Card style={{ width: '18rem', margin: '1rem' }}>
-      <Card.Img variant="top" src={item.avatar} />
+      <Card.Img
+        variant="top"
+        src={item.avatar}
+        alt={item.name}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&auto=format&fit=crop&q=80';
+        }}
+      />
       <Card.Body>
         <Card.Title>{item.name}</Card.Title>
         <Card.Text>

@@ -6,14 +6,14 @@ function App() {
   const pizza1 = {
     name: 'Pizza Calzone Gà Nấm',
     price: '139.000',
-    avatar: '/image/pizza-1.jpg',
+    avatar: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&auto=format&fit=crop&q=80',
     description: 'Bánh pizza nướng gập giòn tan với nhân gà xé, nấm tươi cùng phô mai Mozzarella.',
   };
 
   const pizza2 = {
     name: 'Pizza Calzone Pepperoni',
     price: '159.000',
-    avatar: '/image/pizza-2.jpg',
+    avatar: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&auto=format&fit=crop&q=80',
     description: 'Xúc xích Ý Pepperoni cay nhẹ kết hợp sốt cà chua Marinara và phô mai.',
   };
 
