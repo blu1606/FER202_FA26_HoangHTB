@@ -7,7 +7,7 @@ export const products = [
     inStock: true,
     discount: 10,
     rating: { rate: 4.5, count: 120 },
-    image: 'https://picsum.photos/seed/p1/300/200',
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&auto=format&fit=crop&q=80',
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const products = [
     inStock: true,
     discount: 0,
     rating: { rate: 4.2, count: 85 },
-    image: 'https://picsum.photos/seed/p2/300/200',
+    image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&auto=format&fit=crop&q=80',
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const products = [
     inStock: false,
     discount: 0,
     rating: { rate: 4.8, count: 210 },
-    image: 'https://picsum.photos/seed/p3/300/200',
+    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&auto=format&fit=crop&q=80',
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const products = [
     inStock: true,
     discount: 15,
     rating: { rate: 4.4, count: 64 },
-    image: 'https://picsum.photos/seed/p4/300/200',
+    image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&auto=format&fit=crop&q=80',
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const products = [
     inStock: true,
     discount: 0,
     rating: { rate: 4.0, count: 47 },
-    image: 'https://picsum.photos/seed/p5/300/200',
+    image: 'https://images.unsplash.com/photo-1588508065123-287b28e013da?w=400&auto=format&fit=crop&q=80',
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ export const products = [
     inStock: false,
     discount: 20,
     rating: { rate: 3.9, count: 32 },
-    image: 'https://picsum.photos/seed/p6/300/200',
+    image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=400&auto=format&fit=crop&q=80',
   },
   {
     id: 7,
@@ -67,7 +67,7 @@ export const products = [
     inStock: true,
     discount: 5,
     rating: { rate: 4.7, count: 156 },
-    image: 'https://picsum.photos/seed/p7/300/200',
+    image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&auto=format&fit=crop&q=80',
   },
   {
     id: 8,
@@ -77,6 +77,7 @@ export const products = [
     inStock: true,
     discount: 0,
     rating: { rate: 4.1, count: 93 },
-    image: 'https://picsum.photos/seed/p8/300/200',
+    image: 'https://images.unsplash.com/photo-1624823183493-5f1295326550?w=400&auto=format&fit=crop&q=80',
   },
 ];
+

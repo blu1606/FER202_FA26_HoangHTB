@@ -99,11 +99,11 @@ const knownMeta = {
 const discoveredProjects = [];
 const slotDirs = fs.readdirSync(rootDir).filter(d => d.startsWith('slot') && fs.statSync(path.join(rootDir, d)).isDirectory());
 
-// Sort slot folders in descending order (Slot 5, Slot 4, Slot 3, Slot 1...)
+// Sort slot folders in ascending order (Slot 1, Slot 3, Slot 4, Slot 5...)
 slotDirs.sort((a, b) => {
   const numA = parseInt(a.replace(/\D/g, '')) || 0;
   const numB = parseInt(b.replace(/\D/g, '')) || 0;
-  return numB - numA;
+  return numA - numB;
 });
 
 for (const sDir of slotDirs) {
@@ -173,7 +173,7 @@ const cardsHtml = discoveredProjects.map(proj => `
           <button onclick="openPreview('${proj.title.replace(/'/g, "\\'")}', './${proj.output}/')" class="btn btn-secondary">Xem trước</button>
           <a href="./${proj.output}/" target="_blank" class="btn btn-primary">Mở Demo ↗</a>
         </div>
-      </div>`).join('\\n');
+      </div>`).join('\n');
 
 const hubHtml = `<!DOCTYPE html>
 <html lang="vi">

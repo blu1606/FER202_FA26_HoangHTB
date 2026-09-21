@@ -14,7 +14,15 @@ const StudentCard = ({ student }) => {
 
   return (
     <Card style={{ width: '18rem' }} className="shadow-sm">
-      <Card.Img variant="top" src={avatar} alt={name} />
+      <Card.Img
+        variant="top"
+        src={avatar}
+        alt={name}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=0f172a&color=fff&size=200`;
+        }}
+      />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">

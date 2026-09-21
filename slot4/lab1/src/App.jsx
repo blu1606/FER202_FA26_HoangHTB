@@ -6,14 +6,14 @@ function App() {
     name: 'Pizza Calzone Gà Nấm',
     price: '139.000',
     tag: 'Bestseller',
-    avatar: '/image/pizza-1.jpg',
+    avatar: './image/pizza-1.jpg',
   };
 
   const pizza2 = {
     name: 'Pizza Calzone Pepperoni',
     price: '159.000',
     tag: 'Hot',
-    avatar: '/image/pizza-2.jpg',
+    avatar: './image/pizza-2.jpg',
   };
 
   return (

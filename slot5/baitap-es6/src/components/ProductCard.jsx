@@ -19,7 +19,15 @@ const ProductCard = ({ product }) => {
 
   return (
     <Card className="h-100 shadow-sm">
-      <Card.Img variant="top" src={imageSrc} alt={name} />
+      <Card.Img
+        variant="top"
+        src={imageSrc}
+        alt={name}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&auto=format&fit=crop&q=80';
+        }}
+      />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Badge bg="secondary" className="mb-2">
