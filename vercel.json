@@ -1,4 +1,0 @@
-{
-  "buildCommand": "node scripts/build-hub.mjs",
-  "outputDirectory": "dist"
-}

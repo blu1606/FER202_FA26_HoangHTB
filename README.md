@@ -24,5 +24,5 @@
 cd slot5/baitap-es6 && pnpm dev
 
 # Build toàn bộ các Slot thành Hub:
-pnpm build
+node .github/scripts/build-hub.mjs
 ```

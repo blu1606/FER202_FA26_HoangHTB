@@ -137,6 +137,10 @@ for (const proj of discoveredProjects) {
   const projPath = path.join(rootDir, proj.dir);
   console.log(`\n📦 Building [${proj.title}] in ${proj.dir}...`);
   try {
+    if (!fs.existsSync(path.join(projPath, 'node_modules'))) {
+      console.log(`   ⚙️ Installing dependencies for ${proj.dir}...`);
+      execSync('pnpm install', { cwd: projPath, stdio: 'inherit' });
+    }
     execSync('pnpm exec vite build --base=./', {
       cwd: projPath,
       stdio: 'inherit',
