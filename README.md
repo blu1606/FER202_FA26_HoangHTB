@@ -1,10 +1,5 @@
 # FER202 - Front-End Web Development with React
 
-> **Kho lưu trữ mã nguồn học phần FER202 - Lập trình Web Front-End với React**  
-> **Trường Đại học FPT** • Học kỳ: Fall 2026  
-> **Sinh viên:** Hoàng Hồng Thái Bảo (HoangHTB)  
-> **GitHub:** [@blu1606](https://github.com/blu1606)
-
 ---
 
 ## 🌐 Live Demo Hub (Vercel)
