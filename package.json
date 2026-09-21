@@ -1,9 +1,13 @@
 {
-  "name": "fer202-learning-hub",
+  "name": "fer202",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "build": "node build-hub.mjs"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
+

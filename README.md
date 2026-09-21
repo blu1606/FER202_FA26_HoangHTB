@@ -4,11 +4,11 @@
 
 ## 🌐 Live Demo Hub (Vercel)
 
-Dự án được cấu hình multi-project tự động build và triển khai trên **Vercel** thông qua trang **FER202 Learning Hub**. Giảng viên và người chấm có thể bấm trực tiếp vào từng bài để xem và trải nghiệm:
+Dự án được cấu hình multi-project tự động build và triển khai trên **Vercel** thông qua trang **FER202 Hub**. Giảng viên và người chấm có thể bấm trực tiếp vào từng bài để xem và trải nghiệm:
 
-- 🚀 **Trang tổng hợp (Learning Hub):** [https://fer202-fa26-hoanghtb.vercel.app](https://fer202-fa26-hoanghtb.vercel.app) *(cập nhật sau khi kết nối Vercel)*
-- 🍕 **Slot 4 - Lab 1 Ex2 (Pizza Store):** `/slot4/lab1-ex2/`
-- ⚡ **Slot 5 - Lab 2 (ES6 & React Bootstrap):** `/slot5/baitap-es6/`
+- 🚀 **Trang tổng hợp (FER202 Hub):** [https://fer202-hub.vercel.app](https://fer202-hub.vercel.app)
+- 🍕 **Slot 4 - Lab 1 Ex2 (Pizza Store):** [https://fer202-hub.vercel.app/slot4/lab1-ex2/](https://fer202-hub.vercel.app/slot4/lab1-ex2/)
+- ⚡ **Slot 5 - Lab 2 (ES6 & React Bootstrap):** [https://fer202-hub.vercel.app/slot5/baitap-es6/](https://fer202-hub.vercel.app/slot5/baitap-es6/)
 
 ---
 
@@ -16,6 +16,9 @@ Dự án được cấu hình multi-project tự động build và triển khai 
 
 | Slot / Bài tập | Nội dung chi tiết | Công nghệ / Trọng tâm | Live Demo | GitHub Issue |
 |---|---|---|:---:|:---:|
+| **Slot 1** | Khởi tạo môi trường phát triển | Vite, React 19, JSX syntax | [Xem Demo](/slot1/test-prj/) | - |
+| **Slot 3 (Ex2)** | React Props & Data Flow | Props drilling, Component phân tách | [Xem Demo](/slot3/ex2-props/) | - |
+| **Slot 3** | Cấu trúc component & static assets | Import assets, component About | [Xem Demo](/slot3/slot-3/) | - |
 | **Slot 4: Lab 1** | `ProductInfo` Card component | React, React-Bootstrap Card | [Xem Demo](/slot4/lab1/) | [#2](https://github.com/blu1606/FER202_FA26_HoangHTB/issues/2) |
 | **Slot 4: Lab 1 Ex2** | `ProductList` Pizza Store | Container, Row, Col responsive | [Xem Demo](/slot4/lab1-ex2/) | [#3](https://github.com/blu1606/FER202_FA26_HoangHTB/issues/3) |
 | **Slot 5: Lab 2 (Bài 1)** | `WelcomeCard` viền đổi màu | Template literals, const/let, giờ thực tế | [Xem Demo](/slot5/baitap-es6/) | [#4](https://github.com/blu1606/FER202_FA26_HoangHTB/issues/4) |
@@ -31,9 +34,10 @@ Dự án được cấu hình multi-project tự động build và triển khai 
 - **Frontend Core:** React 19, JavaScript (ES6+)
 - **UI Framework:** React-Bootstrap 2.x, Bootstrap 5.3
 - **Build Tool:** Vite 8.x
-- **Package Manager:** PNPM
+- **Package Manager:** PNPM (Workspace Monorepo)
+- **Design Style:** Modern Flat Design (`ck:ui-ux-pro-max`)
 - **Code Quality:** ESLint 10.x
-- **Deployment:** Vercel Multi-Project Hub
+- **Deployment:** Vercel Multi-Project Hub (CI/CD Automated)
 - **Git Workflow:** Conventional Commits with scope (`feat(scope)`, `chore(scope)`, `refactor(scope)`, `docs(scope)`)
 
 ---
@@ -43,7 +47,9 @@ Dự án được cấu hình multi-project tự động build và triển khai 
 ```text
 code/
 ├── build-hub.mjs              # Script build gom toàn bộ các Slot vào dist/ cho Vercel
+├── pnpm-workspace.yaml        # Cấu hình PNPM Monorepo quản lý dependencies chung
 ├── package.json               # Root package.json điều phối build
+├── vercel.json                # Cấu hình triển khai Vercel (Build Command & Output)
 ├── README.md                  # Tài liệu hướng dẫn & báo cáo tiến độ
 ├── slot1/                     # Mã nguồn Slot 1
 ├── slot2/                     # Mã nguồn Slot 2
@@ -83,14 +89,10 @@ Kết quả build hoàn chỉnh của tất cả các bài tập sẽ được x
 
 ---
 
-## 🚀 Hướng Dẫn Kết Nối Lên Vercel
+## 🚀 Tự Động Triển Khai Với Vercel CI/CD
 
-1. Truy cập [Vercel](https://vercel.com) và đăng nhập bằng tài khoản GitHub.
-2. Bấm **Add New...** ➡️ **Project**.
-3. Chọn repository: **`blu1606/FER202_FA26_HoangHTB`**.
-4. Cấu hình cài đặt:
-   - **Framework Preset:** `Other`
-   - **Root Directory:** `./` (để mặc định thư mục gốc)
-   - **Build Command:** `pnpm run build` hoặc `node build-hub.mjs`
-   - **Output Directory:** `dist`
-5. Bấm **Deploy**. Vercel sẽ tự động build toàn bộ các project con và cung cấp 1 đường link duy nhất!
+Repository đã được thiết lập đầy đủ cấu hình Monorepo (`pnpm-workspace.yaml`, `vercel.json`, `build-hub.mjs`). Mỗi khi thực hiện `git push` lên nhánh `main`, hệ thống CI/CD trên Vercel sẽ tự động:
+1. Cài đặt các gói phụ thuộc (`pnpm install`).
+2. Tự động biên dịch toàn bộ các ứng dụng con của các slot thành bundle độc lập có cấu trúc URL tương đối (`./assets/...`).
+3. Xuất bản phiên bản mới nhất lên địa chỉ chính thức: [https://fer202-hub.vercel.app](https://fer202-hub.vercel.app).
+

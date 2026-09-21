@@ -20,7 +20,7 @@ function App() {
     <>
       <About user={user1} />
       <About user={user2} />
-    </> //FER202_FA26_HoangHTB
+    </>
   )
 }
 
