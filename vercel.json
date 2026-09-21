@@ -1,5 +1,4 @@
 {
-  "buildCommand": "node build-hub.mjs",
-  "outputDirectory": "dist",
-  "framework": null
+  "buildCommand": "node scripts/build-hub.mjs",
+  "outputDirectory": "dist"
 }

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "node build-hub.mjs"
+    "build": "node scripts/build-hub.mjs"
   },
   "engines": {
     "node": ">=20.0.0"

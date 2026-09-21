@@ -181,6 +181,7 @@ const hubHtml = `<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FER202</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -743,6 +744,18 @@ ${cardsHtml}
 `;
 
 fs.writeFileSync(path.join(distDir, 'index.html'), hubHtml);
+
+// 4. Generate SVG Favicon
+const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+  <circle cx="32" cy="32" r="4.5" fill="#38bdf8"/>
+  <ellipse cx="32" cy="32" rx="22" ry="8.5" fill="none" stroke="#38bdf8" stroke-width="2.5" transform="rotate(30 32 32)"/>
+  <ellipse cx="32" cy="32" rx="22" ry="8.5" fill="none" stroke="#38bdf8" stroke-width="2.5" transform="rotate(90 32 32)"/>
+  <ellipse cx="32" cy="32" rx="22" ry="8.5" fill="none" stroke="#38bdf8" stroke-width="2.5" transform="rotate(150 32 32)"/>
+</svg>`;
+fs.writeFileSync(path.join(distDir, 'favicon.svg'), faviconSvg);
+
 console.log('\n✨ Hub Dashboard created at dist/index.html');
+console.log('✨ Favicon generated at dist/favicon.svg');
 console.log('🎉 Multi-project build finished successfully!');
 
