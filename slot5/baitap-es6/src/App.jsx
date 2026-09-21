@@ -3,6 +3,8 @@ import Col from 'react-bootstrap/Col';
 import WelcomeCard from './components/WelcomeCard';
 import StudentCard from './components/StudentCard';
 import ProductCard from './components/ProductCard';
+import ProductList from './components/ProductList';
+import { products } from './data/products';
 
 const students = [
   {
@@ -71,6 +73,11 @@ function App() {
           <ProductCard product={productC} />
         </Col>
       </Row>
+
+      <hr className="my-5" />
+
+      <h2 className="mb-4">Bài 4: Lưới Card sản phẩm (map() và key)</h2>
+      <ProductList products={products} />
     </div>
   );
 }
