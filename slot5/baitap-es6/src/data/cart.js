@@ -1,0 +1,42 @@
+export const cartItems = [
+  {
+    id: 1,
+    name: 'Tai nghe Bluetooth',
+    price: 531000,
+    quantity: 2,
+    discount: 10,
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: 'Bàn phím cơ',
+    price: 1250000,
+    quantity: 1,
+    discount: 0,
+    inStock: false,
+  },
+  {
+    id: 3,
+    name: 'Màn hình 24 inch',
+    price: 2966500,
+    quantity: 1,
+    discount: 15,
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: 'Chuột không dây',
+    price: 250000,
+    quantity: 3,
+    discount: 0,
+    inStock: true,
+  },
+  {
+    id: 5,
+    name: 'Ổ cứng SSD 512GB',
+    price: 1130500,
+    quantity: 1,
+    discount: 5,
+    inStock: true,
+  },
+];
