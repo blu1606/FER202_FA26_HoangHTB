@@ -29,8 +29,18 @@ function copyDir(src, dest) {
 }
 
 // 2. Scan and Build Subprojects
-// Known metadata dictionary for polished titles & descriptions
 const knownMeta = {
+  'slot6/lab6': {
+    title: 'Lab 2: Pizza House Website Interface',
+    slotTag: 'Slot 6',
+    desc: 'Xây dựng giao diện website Pizza House hoàn chỉnh bằng React 19 và Bootstrap 5: Header/Navbar, Hero Carousel, Our Menu với nhãn Sale/New và Form Book Your Table.',
+    features: [
+      'Navbar Pizza House kèm thanh tìm kiếm',
+      'Hero Carousel Banner giới thiệu món nổi bật',
+      'Lưới Our Menu 4 cột với nhãn Sale/New và giá khuyến mãi',
+      'Form Book Your Table đặt bàn tiệc responsive',
+    ],
+  },
   'slot5/baitap-es6': {
     title: 'Lab 2: ES6 & React Bootstrap',
     slotTag: 'Slot 5',

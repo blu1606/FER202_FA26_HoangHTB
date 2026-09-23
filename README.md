@@ -14,6 +14,7 @@
 | **Slot 4** | Lab 1: ProductInfo Card | React-Bootstrap Card | [Xem Demo](/slot4/lab1/) |
 | **Slot 4** | Lab 1 Ex2: Pizza Store | Responsive Grid (Container, Row, Col) | [Xem Demo](/slot4/lab1-ex2/) |
 | **Slot 5** | Lab 2: ES6 & React Bootstrap | Template literals, Destructuring, Nullish, Map | [Xem Demo](/slot5/baitap-es6/) |
+| **Slot 6** | Lab 2: Pizza House Website | Bootstrap 5, Grid System, Carousel, Cards | [Xem Demo](/slot6/lab6/) |
 
 ---
 
