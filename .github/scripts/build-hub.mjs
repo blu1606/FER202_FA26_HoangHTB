@@ -30,6 +30,17 @@ function copyDir(src, dest) {
 
 // 2. Scan and Build Subprojects
 const knownMeta = {
+  'slot7/usestate-exercises': {
+    title: 'Exercise 12: useState Hooks & Interactive UI',
+    slotTag: 'Slot 7',
+    desc: 'Chuyên đề thực hành toàn diện React Hook useState: Simple Counter, Controlled Input, Toggle Visibility, Todo List, Color Switcher, Search Filter và Drag & Drop List.',
+    features: [
+      'Simple Counter với nút tăng/giảm/reset',
+      'Controlled Input hiển thị nội dung real-time',
+      'Toggle Visibility và Todo List hoàn chỉnh',
+      'Color Switcher động & Drag & Drop List',
+    ],
+  },
   'slot6/lab6': {
     title: 'Lab 2: Pizza House Website Interface',
     slotTag: 'Slot 6',
