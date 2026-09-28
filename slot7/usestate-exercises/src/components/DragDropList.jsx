@@ -3,21 +3,10 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
-
-const INITIAL_TASK_LIST = [
-  '1. Khởi tạo dự án Vite với React 19',
-  '2. Cài đặt React-Bootstrap và tích hợp CSS',
-  '3. Thực hành Hook useState với Simple Counter',
-  '4. Xây dựng Controlled Input Field và Real-time Preview',
-  '5. Lập trình Toggle Visibility ẩn hiện nội dung',
-  '6. Quản lý mảng State với ứng dụng Todo List',
-  '7. Tương tác Dropdown động với Color Switcher',
-  '8. Lọc dữ liệu thời gian thực với Search Filter',
-  '9. Kéo thả sắp xếp danh sách với Drag and Drop API',
-];
+import { INITIAL_DRAG_DROP_TASKS } from '../data/exercise-data';
 
 export default function DragDropList() {
-  const [items, setItems] = useState(INITIAL_TASK_LIST);
+  const [items, setItems] = useState(INITIAL_DRAG_DROP_TASKS);
   const [draggingItem, setDraggingItem] = useState(null);
   const [dragOverItem, setDragOverItem] = useState(null);
 

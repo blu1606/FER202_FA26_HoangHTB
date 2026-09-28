@@ -74,11 +74,12 @@ async function main() {
 
       // 2. Bài 1: Counter
       console.log('📸 Capturing counter.png...');
-      await page.click('text="Bài 1: Counter"');
+      await page.click('[data-rr-ui-event-key="ex1"]');
       await page.waitForTimeout(300);
-      await page.click('button:has-text("+ Tăng 1")');
-      await page.click('button:has-text("+ Tăng 1")');
-      await page.click('button:has-text("+ Tăng 1")');
+      try {
+        await page.click('#exercise-1 button.btn-primary');
+        await page.click('#exercise-1 button.btn-primary');
+      } catch (e) {}
       await page.waitForTimeout(200);
       const card1 = await page.$('#exercise-1');
       if (card1) {
@@ -87,12 +88,11 @@ async function main() {
 
       // 3. Bài 2: Controlled Input
       console.log('📸 Capturing controlled-input.png...');
-      await page.click('text="Bài 2: Controlled Input"');
+      await page.click('[data-rr-ui-event-key="ex2"]');
       await page.waitForTimeout(300);
-      const input = await page.$('#exercise-2 input');
-      if (input) {
-        await input.fill('Xin chào React 19 và Hook useState!');
-      }
+      try {
+        await page.fill('#exercise-2 input', 'Xin chào React 19 và Hook useState!');
+      } catch (e) {}
       await page.waitForTimeout(200);
       const card2 = await page.$('#exercise-2');
       if (card2) {
@@ -101,9 +101,11 @@ async function main() {
 
       // 4. Bài 3: Toggle Visibility
       console.log('📸 Capturing toggle-visibility.png...');
-      await page.click('text="Bài 3: Toggle Visibility"');
+      await page.click('[data-rr-ui-event-key="ex3"]');
       await page.waitForTimeout(300);
-      await page.click('button:has-text("Show Content")');
+      try {
+        await page.click('#exercise-3 button');
+      } catch (e) {}
       await page.waitForTimeout(200);
       const card3 = await page.$('#exercise-3');
       if (card3) {
@@ -112,13 +114,12 @@ async function main() {
 
       // 5. Bài 4: Todo List
       console.log('📸 Capturing todo-list.png...');
-      await page.click('text="Bài 4: Todo List"');
+      await page.click('[data-rr-ui-event-key="ex4"]');
       await page.waitForTimeout(300);
-      const todoInput = await page.$('#exercise-4 input');
-      if (todoInput) {
-        await todoInput.fill('Chụp ảnh giao diện và cập nhật GitHub Issue');
+      try {
+        await page.fill('#exercise-4 input', 'Chụp ảnh giao diện và cập nhật GitHub Issue');
         await page.click('#exercise-4 button[type="submit"]');
-      }
+      } catch (e) {}
       await page.waitForTimeout(200);
       const card4 = await page.$('#exercise-4');
       if (card4) {
@@ -127,12 +128,11 @@ async function main() {
 
       // 6. Bài 5: Color Switcher
       console.log('📸 Capturing color-switcher.png...');
-      await page.click('text="Bài 5: Color Switcher"');
+      await page.click('[data-rr-ui-event-key="ex5"]');
       await page.waitForTimeout(300);
-      const select = await page.$('#exercise-5 select');
-      if (select) {
-        await select.selectOption('#6f42c1'); // Purple
-      }
+      try {
+        await page.selectOption('#exercise-5 select', '#6f42c1');
+      } catch (e) {}
       await page.waitForTimeout(300);
       const card5 = await page.$('#exercise-5');
       if (card5) {
@@ -141,12 +141,11 @@ async function main() {
 
       // 7. Bài 6: Search Filter
       console.log('📸 Capturing search-filter.png...');
-      await page.click('text="Bài 6: Search Filter"');
+      await page.click('[data-rr-ui-event-key="ex6"]');
       await page.waitForTimeout(300);
-      const searchInput = await page.$('#exercise-6 input[type="search"]');
-      if (searchInput) {
-        await searchInput.fill('React');
-      }
+      try {
+        await page.fill('#exercise-6 input', 'React');
+      } catch (e) {}
       await page.waitForTimeout(200);
       const card6 = await page.$('#exercise-6');
       if (card6) {
@@ -155,7 +154,7 @@ async function main() {
 
       // 8. Bài 7: Drag & Drop
       console.log('📸 Capturing drag-drop-list.png...');
-      await page.click('text="Bài 7: Drag & Drop"');
+      await page.click('[data-rr-ui-event-key="ex7"]');
       await page.waitForTimeout(300);
       const card7 = await page.$('#exercise-7');
       if (card7) {

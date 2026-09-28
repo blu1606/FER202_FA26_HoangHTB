@@ -5,13 +5,10 @@ import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Badge from 'react-bootstrap/Badge';
+import { INITIAL_TODOS } from '../data/exercise-data';
 
 export default function TodoList() {
-  const [todos, setTodos] = useState([
-    { id: 1, text: 'Học lý thuyết useState và quy tắc Hook' },
-    { id: 2, text: 'Tạo dự án Vite với React-Bootstrap' },
-    { id: 3, text: 'Làm bài tập Todo List tương tác' },
-  ]);
+  const [todos, setTodos] = useState(INITIAL_TODOS);
   const [inputText, setInputText] = useState('');
 
   const handleAddTodo = (e) => {

@@ -4,24 +4,12 @@ import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
 import InputGroup from 'react-bootstrap/InputGroup';
-
-const INITIAL_ITEMS = [
-  { id: 1, name: 'React', category: 'Frontend Library', desc: 'Thư viện UI nổi tiếng của Meta' },
-  { id: 2, name: 'JavaScript', category: 'Programming Language', desc: 'Ngôn ngữ nền tảng của Web hiện đại' },
-  { id: 3, name: 'TypeScript', category: 'Language SuperSet', desc: 'JavaScript bổ sung hệ thống kiểu chặt chẽ' },
-  { id: 4, name: 'Vite', category: 'Build Tool', desc: 'Công cụ build và dev server siêu tốc' },
-  { id: 5, name: 'Bootstrap', category: 'CSS Framework', desc: 'Thư viện UI responsive phổ biến nhất' },
-  { id: 6, name: 'Next.js', category: 'Fullstack Framework', desc: 'Framework React hỗ trợ SSR và App Router' },
-  { id: 7, name: 'Node.js', category: 'Runtime Environment', desc: 'Môi trường thực thi JavaScript phía Server' },
-  { id: 8, name: 'Redux Toolkit', category: 'State Management', desc: 'Công cụ quản lý Global State chuyên nghiệp' },
-  { id: 9, name: 'Tailwind CSS', category: 'CSS Framework', desc: 'Utility-first CSS framework tốc độ cao' },
-  { id: 10, name: 'Python', category: 'Programming Language', desc: 'Ngôn ngữ đa dụng cho Backend và AI/ML' },
-];
+import { SEARCH_TECH_ITEMS } from '../data/exercise-data';
 
 export default function SearchFilter() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredItems = INITIAL_ITEMS.filter((item) => {
+  const filteredItems = SEARCH_TECH_ITEMS.filter((item) => {
     const q = searchTerm.toLowerCase().trim();
     return (
       item.name.toLowerCase().includes(q) ||

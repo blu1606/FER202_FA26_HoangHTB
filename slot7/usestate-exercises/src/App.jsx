@@ -13,26 +13,18 @@ import TodoList from './components/TodoList';
 import ColorSwitcher from './components/ColorSwitcher';
 import SearchFilter from './components/SearchFilter';
 import DragDropList from './components/DragDropList';
+import { TABS_CONFIG } from './data/exercise-data';
+import reactLogo from './assets/react.svg';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('all');
-
-  const tabs = [
-    { key: 'all', label: 'Tất cả (All)' },
-    { key: 'ex1', label: 'Bài 1: Counter' },
-    { key: 'ex2', label: 'Bài 2: Controlled Input' },
-    { key: 'ex3', label: 'Bài 3: Toggle Visibility' },
-    { key: 'ex4', label: 'Bài 4: Todo List' },
-    { key: 'ex5', label: 'Bài 5: Color Switcher' },
-    { key: 'ex6', label: 'Bài 6: Search Filter' },
-    { key: 'ex7', label: 'Bài 7: Drag & Drop' },
-  ];
 
   return (
     <div className="min-vh-100 bg-light d-flex flex-column">
       <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm py-3 mb-4">
         <Container>
           <Navbar.Brand className="d-flex align-items-center gap-2 fw-bold">
+            <img src={reactLogo} alt="React" width="24" height="24" className="me-1" />
             <span className="badge bg-primary fs-6">Slot 7</span>
             <span>React Hook: useState Exercises</span>
           </Navbar.Brand>
@@ -62,7 +54,7 @@ export default function App() {
             onSelect={(selected) => setActiveTab(selected || 'all')}
             className="gap-2 flex-wrap"
           >
-            {tabs.map((tab) => (
+            {TABS_CONFIG.map((tab) => (
               <Nav.Item key={tab.key}>
                 <Nav.Link
                   eventKey={tab.key}

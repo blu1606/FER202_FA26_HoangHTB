@@ -3,17 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-const COLOR_OPTIONS = [
-  { name: 'Xanh dương (Blue)', value: '#0d6efd', textColor: '#ffffff' },
-  { name: 'Xanh lá (Green)', value: '#198754', textColor: '#ffffff' },
-  { name: 'Đỏ (Red)', value: '#dc3545', textColor: '#ffffff' },
-  { name: 'Vàng (Yellow)', value: '#ffc107', textColor: '#212529' },
-  { name: 'Tím (Purple)', value: '#6f42c1', textColor: '#ffffff' },
-  { name: 'Cam (Orange)', value: '#fd7e14', textColor: '#ffffff' },
-  { name: 'Xám đậm (Dark)', value: '#212529', textColor: '#ffffff' },
-  { name: 'Xanh mòng két (Teal)', value: '#20c997', textColor: '#ffffff' },
-];
+import { COLOR_OPTIONS } from '../data/exercise-data';
 
 export default function ColorSwitcher() {
   const [selectedColor, setSelectedColor] = useState(COLOR_OPTIONS[0].value);
