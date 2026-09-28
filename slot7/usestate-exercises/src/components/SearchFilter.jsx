@@ -23,7 +23,7 @@ export default function SearchFilter() {
       <Card.Header className="bg-secondary text-white py-3 d-flex justify-content-between align-items-center">
         <h5 className="mb-0 fw-semibold">Bài 6: Search Filter</h5>
         <Badge bg="light" text="dark" className="fs-6 px-3 py-1">
-          {filteredItems.length} / {INITIAL_ITEMS.length} kết quả
+          {filteredItems.length} / {SEARCH_TECH_ITEMS.length} kết quả
         </Badge>
       </Card.Header>
       <Card.Body className="p-4">
