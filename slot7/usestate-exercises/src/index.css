@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link {
+  transition: all 0.2s ease-in-out;
+  border-radius: 6px;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-header {
+  border-bottom: none;
+}
