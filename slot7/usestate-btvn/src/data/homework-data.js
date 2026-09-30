@@ -48,12 +48,14 @@ export const QUIZ_QUESTIONS = [
   },
 ];
 
-export const HOMEWORK_TABS_CONFIG = [
-  { key: 'hw-all', label: 'Tất cả HW' },
-  { key: 'hw1', label: 'HW 1: FAQ Accordion' },
-  { key: 'hw2', label: 'HW 2: Star Rating' },
-  { key: 'hw3', label: 'HW 3: BMI Calculator' },
-  { key: 'hw4', label: 'HW 4: Student Manager' },
-  { key: 'hw5', label: 'HW 5: Quiz App' },
+export const TABS_CONFIG = [
+  { key: 'all', label: 'Tất cả bài tập' },
+  { key: 'b1', label: 'Bài 1: FAQ Accordion' },
+  { key: 'b2', label: 'Bài 2: Đánh giá sao' },
+  { key: 'b3', label: 'Bài 3: Máy tính BMI' },
+  { key: 'b4', label: 'Bài 4: Quản lý điểm SV' },
+  { key: 'b5', label: 'Bài 5: Quiz trắc nghiệm' },
 ];
+
+export const HOMEWORK_TABS_CONFIG = TABS_CONFIG;
 

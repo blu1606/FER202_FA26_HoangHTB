@@ -8,7 +8,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
-import { CITIES, INITIAL_STUDENTS } from '../../data/homework-data';
+import { CITIES, INITIAL_STUDENTS } from '../data/homework-data';
 
 export default function StudentManager() {
   const [students, setStudents] = useState(INITIAL_STUDENTS);

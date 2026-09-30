@@ -6,7 +6,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Alert from 'react-bootstrap/Alert';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { classifyBmi } from '../../data/homework-data';
+import { classifyBmi } from '../data/homework-data';
 
 export default function BmiCalculator() {
   const [height, setHeight] = useState('');

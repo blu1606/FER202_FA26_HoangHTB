@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { STAR_RATING_LABELS } from '../../data/homework-data';
+import { STAR_RATING_LABELS } from '../data/homework-data';
 
 export default function StarRating({ value = 0, onChange, max = 5 }) {
   const [hovered, setHovered] = useState(0);

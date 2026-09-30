@@ -5,7 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
-import { QUIZ_QUESTIONS } from '../../data/homework-data';
+import { QUIZ_QUESTIONS } from '../data/homework-data';
 
 function shuffle(array) {
   const result = [...array];

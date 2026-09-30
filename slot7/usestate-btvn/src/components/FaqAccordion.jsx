@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
-import { FAQS } from '../../data/homework-data';
+import { FAQS } from '../data/homework-data';
 
 function FaqItem({ question, answer }) {
   const [isOpen, setIsOpen] = useState(false);
