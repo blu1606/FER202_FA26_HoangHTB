@@ -59,7 +59,11 @@ export default function ReviewForm() {
               placeholder="Chia sẻ cảm nhận của bạn về bài học..."
               value={comment}
               onChange={(e) => setComment(e.target.value)}
+              isInvalid={comment.length > 0 && comment.trim().length < 5}
             />
+            <Form.Control.Feedback type="invalid">
+              Nội dung nhận xét phải có ít nhất 5 ký tự (hiện có {comment.trim().length} ký tự).
+            </Form.Control.Feedback>
           </Form.Group>
 
           <Button variant="warning" type="submit" disabled={!canSubmit} className="fw-bold w-100">
