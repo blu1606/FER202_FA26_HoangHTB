@@ -43,15 +43,19 @@ export default function TodoList() {
         </p>
 
         <Form onSubmit={handleAddTodo} className="mb-4">
-          <InputGroup size="lg">
+          <InputGroup size="lg" hasValidation>
             <Form.Control
               placeholder="Nhập tên công việc cần làm..."
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
+              isInvalid={inputText.length > 0 && !inputText.trim()}
             />
-            <Button variant="warning" type="submit" className="fw-semibold px-4">
+            <Button variant="warning" type="submit" className="fw-semibold px-4" disabled={!inputText.trim()}>
               + Thêm
             </Button>
+            <Form.Control.Feedback type="invalid">
+              Vui lòng nhập tên công việc hợp lệ.
+            </Form.Control.Feedback>
           </InputGroup>
         </Form>
 

@@ -93,11 +93,12 @@ export default function StudentManager() {
         <Row className="g-3 mb-4">
           <Col md={7}>
             <Form onSubmit={handleAddStudent}>
-              <InputGroup>
+              <InputGroup hasValidation>
                 <Form.Control
                   placeholder="Nhập họ và tên sinh viên (tối thiểu 3 ký tự)..."
                   value={newName}
                   onChange={(e) => setNewName(e.target.value)}
+                  isInvalid={newName.length > 0 && newName.trim().length < 3}
                 />
                 <Button
                   variant="primary"
@@ -106,6 +107,9 @@ export default function StudentManager() {
                 >
                   Thêm sinh viên
                 </Button>
+                <Form.Control.Feedback type="invalid">
+                  Tên sinh viên phải có tối thiểu 3 ký tự (hiện có {newName.trim().length} ký tự).
+                </Form.Control.Feedback>
               </InputGroup>
             </Form>
           </Col>
@@ -153,7 +157,11 @@ export default function StudentManager() {
                       size="sm"
                       value={s.score}
                       onChange={(e) => handleUpdateScore(s.id, e.target.value)}
+                      isInvalid={s.score < 0 || s.score > 10 || Number.isNaN(Number(s.score))}
                     />
+                    <Form.Control.Feedback type="invalid">
+                      Điểm 0–10
+                    </Form.Control.Feedback>
                   </td>
                   <td>
                     <Form.Select
