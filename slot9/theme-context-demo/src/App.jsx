@@ -11,6 +11,7 @@ import ThemeSwitcher from './components/ThemeSwitcher';
 import CartManager from './components/CartManager';
 import AuthManager from './components/AuthManager';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import NotificationToast from './components/NotificationToast';
 import { useTheme } from './contexts/ThemeContext';
 import { TABS_CONFIG } from './data/exercise-data';
 
@@ -55,8 +56,8 @@ export default function App() {
                 Khắc phục Prop Drilling: Quản lý Theme, Giỏ hàng tối ưu (useReducer), Xác thực (AuthContext), Đa ngôn ngữ (i18n), và Thông báo (Toast).
               </p>
             </div>
-            <Badge bg="primary" className="px-3 py-2 fs-6">
-              Slot 9 — useContext
+            <Badge bg="success" className="px-3 py-2 fs-6">
+              5 / 5 bài hoàn thành
             </Badge>
           </div>
 
@@ -111,6 +112,12 @@ export default function App() {
             {(activeTab === 'all' || activeTab === 'ex4') && (
               <div id="exercise-4">
                 <LanguageSwitcher />
+              </div>
+            )}
+
+            {(activeTab === 'all' || activeTab === 'ex5') && (
+              <div id="exercise-5">
+                <NotificationToast />
               </div>
             )}
           </Col>
