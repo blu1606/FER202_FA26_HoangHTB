@@ -9,6 +9,7 @@ import MiniCart from './components/MiniCart';
 import ProfilePreview from './components/ProfilePreview';
 import ProductFilter from './components/ProductFilter';
 import RegisterForm from './components/RegisterForm';
+import ValidatedRegisterForm from './components/ValidatedRegisterForm';
 import { products } from './data/products';
 
 const EXERCISES = [
@@ -127,6 +128,13 @@ export default function App() {
         {currentTab === 4 && (
           <div id="exercise-4">
             <RegisterForm />
+          </div>
+        )}
+
+        {/* Tab 5: Bài 5 */}
+        {currentTab === 5 && (
+          <div id="exercise-5">
+            <ValidatedRegisterForm />
           </div>
         )}
       </Container>
