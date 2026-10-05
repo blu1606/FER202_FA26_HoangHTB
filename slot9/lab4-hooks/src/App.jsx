@@ -10,6 +10,7 @@ import ProfilePreview from './components/ProfilePreview';
 import ProductFilter from './components/ProductFilter';
 import RegisterForm from './components/RegisterForm';
 import ValidatedRegisterForm from './components/ValidatedRegisterForm';
+import TodoList from './components/TodoList';
 import { products } from './data/products';
 
 const EXERCISES = [
@@ -135,6 +136,13 @@ export default function App() {
         {currentTab === 5 && (
           <div id="exercise-5">
             <ValidatedRegisterForm />
+          </div>
+        )}
+
+        {/* Tab 6: Bài 6 */}
+        {currentTab === 6 && (
+          <div id="exercise-6">
+            <TodoList />
           </div>
         )}
       </Container>
