@@ -7,6 +7,8 @@ import Badge from 'react-bootstrap/Badge';
 import QuantityPicker from './components/QuantityPicker';
 import MiniCart from './components/MiniCart';
 import ProfilePreview from './components/ProfilePreview';
+import ProductFilter from './components/ProductFilter';
+import { products } from './data/products';
 
 const EXERCISES = [
   { id: 1, title: 'Bài 1: useState Cơ bản', desc: 'QuantityPicker & MiniCart' },
@@ -110,6 +112,13 @@ export default function App() {
         {currentTab === 2 && (
           <div id="exercise-2">
             <ProfilePreview />
+          </div>
+        )}
+
+        {/* Tab 3: Bài 3 */}
+        {currentTab === 3 && (
+          <div id="exercise-3">
+            <ProductFilter products={products} />
           </div>
         )}
       </Container>
