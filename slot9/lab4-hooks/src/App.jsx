@@ -8,6 +8,7 @@ import QuantityPicker from './components/QuantityPicker';
 import MiniCart from './components/MiniCart';
 import ProfilePreview from './components/ProfilePreview';
 import ProductFilter from './components/ProductFilter';
+import RegisterForm from './components/RegisterForm';
 import { products } from './data/products';
 
 const EXERCISES = [
@@ -119,6 +120,13 @@ export default function App() {
         {currentTab === 3 && (
           <div id="exercise-3">
             <ProductFilter products={products} />
+          </div>
+        )}
+
+        {/* Tab 4: Bài 4 */}
+        {currentTab === 4 && (
+          <div id="exercise-4">
+            <RegisterForm />
           </div>
         )}
       </Container>
