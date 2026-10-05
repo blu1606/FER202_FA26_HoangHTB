@@ -4,6 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
+
 import QuantityPicker from './components/QuantityPicker';
 import MiniCart from './components/MiniCart';
 import ProfilePreview from './components/ProfilePreview';
@@ -13,6 +15,11 @@ import ValidatedRegisterForm from './components/ValidatedRegisterForm';
 import TodoList from './components/TodoList';
 import CartDemoPage from './pages/CartDemoPage';
 import LoginForm from './components/LoginForm';
+import ThemeAuthDemoPage from './pages/ThemeAuthDemoPage';
+
+import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { AuthProvider } from './context/AuthContext';
+import { CartProvider } from './context/CartContext';
 import { products } from './data/products';
 
 const EXERCISES = [
@@ -28,20 +35,21 @@ const EXERCISES = [
   { id: 10, title: 'Bài 10: Cửa hàng Mini Tổng hợp', desc: 'Full Shop, Cart & Checkout' },
 ];
 
-export default function App() {
+function AppContent() {
   const [currentTab, setCurrentTab] = useState(1);
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="bg-light min-vh-100">
-      <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm mb-4">
+    <div data-bs-theme={theme} className="bg-body text-body min-vh-100">
+      <Navbar bg={theme === 'dark' ? 'dark' : 'primary'} variant="dark" expand="lg" className="shadow-sm mb-4">
         <Container fluid="lg">
           <Navbar.Brand className="fw-bold d-flex align-items-center gap-2">
-            <span className="badge bg-primary">FER202</span>
+            <span className="badge bg-warning text-dark">FER202</span>
             <span>BTVN Lab 4: React Hooks</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="lab4-nav" />
           <Navbar.Collapse id="lab4-nav">
-            <Nav className="ms-auto flex-wrap gap-1">
+            <Nav className="ms-auto flex-wrap gap-1 align-items-center">
               {EXERCISES.map((ex) => (
                 <Nav.Link
                   key={ex.id}
@@ -53,6 +61,15 @@ export default function App() {
                   {`Bài ${ex.id}`}
                 </Nav.Link>
               ))}
+              <Button
+                size="sm"
+                variant="outline-light"
+                className="ms-lg-2"
+                onClick={toggleTheme}
+                title="Đổi giao diện Sáng / Tối"
+              >
+                {theme === 'light' ? '🌙 Tối' : '☀️ Sáng'}
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -61,10 +78,10 @@ export default function App() {
       <Container fluid="lg" className="pb-5">
         <div className="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
           <div>
-            <h3 className="fw-bold text-dark mb-1">
+            <h3 className="fw-bold mb-1">
               {EXERCISES.find((e) => e.id === currentTab)?.title}
             </h3>
-            <p className="text-muted mb-0">
+            <p className="text-secondary mb-0">
               {EXERCISES.find((e) => e.id === currentTab)?.desc}
             </p>
           </div>
@@ -77,11 +94,11 @@ export default function App() {
         {currentTab === 1 && (
           <div id="exercise-1" className="d-flex flex-column gap-4">
             <Card className="shadow-sm border-0">
-              <Card.Header className="bg-white py-3">
+              <Card.Header className="py-3">
                 <h5 className="mb-0 fw-bold text-primary">Phần 1. Bộ chọn số lượng (QuantityPicker)</h5>
               </Card.Header>
               <Card.Body>
-                <p className="text-muted mb-3">
+                <p className="text-secondary mb-3">
                   Min = 1, Max = 10 (mặc định) và ví dụ Min = 2, Max = 5 hoạt động với state độc lập.
                   Thử nút <code>+3 (sai)</code> và <code>+3 (đúng)</code> để kiểm tra cơ chế functional update:
                 </p>
@@ -100,11 +117,11 @@ export default function App() {
             </Card>
 
             <Card className="shadow-sm border-0">
-              <Card.Header className="bg-white py-3">
+              <Card.Header className="py-3">
                 <h5 className="mb-0 fw-bold text-primary">Phần 2. Giỏ hàng mini (MiniCart)</h5>
               </Card.Header>
               <Card.Body>
-                <p className="text-muted mb-3">
+                <p className="text-secondary mb-3">
                   State là một mảng object. Cập nhật bất biến bằng <code>map</code> + spread, tính tổng bằng <code>reduce</code>:
                 </p>
                 <MiniCart />
@@ -161,7 +178,26 @@ export default function App() {
             <LoginForm />
           </div>
         )}
+
+        {/* Tab 9: Bài 9 */}
+        {currentTab === 9 && (
+          <div id="exercise-9">
+            <ThemeAuthDemoPage />
+          </div>
+        )}
       </Container>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AuthProvider>
+        <CartProvider>
+          <AppContent />
+        </CartProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
