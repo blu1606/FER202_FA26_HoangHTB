@@ -16,6 +16,9 @@
 | **Slot 5** | Lab 2: ES6 & React Bootstrap | Template literals, Destructuring, Nullish, Map | [Xem Demo](/slot5/baitap-es6/) |
 | **Slot 6** | Lab 2: Pizza House Website | Bootstrap 5, Grid System, Carousel, Cards | [Xem Demo](/slot6/lab6/) |
 | **Slot 7** | Exercise 12: useState Hooks | React Hook useState, Controlled Input, Drag & Drop | [Xem Demo](/slot7/usestate-exercises/) |
+| **Slot 8** | Exercise 13: useReducer | Complex state management, Kanban, Order Tracker | [Xem Demo](/slot8/usereducer-exercises/) |
+| **Slot 9** | Theme Context Demo | useContext Theme, Cart, Auth, Language, Toast | [Xem Demo](/slot9/theme-context-demo/) |
+| **Slot 9** | BTVN Lab 4: React Hooks | 10 bài tập toàn diện useState, useReducer, useContext | [Xem Demo](/slot9/lab4-hooks/) |
 
 ---
 

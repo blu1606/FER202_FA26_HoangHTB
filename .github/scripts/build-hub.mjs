@@ -30,6 +30,39 @@ function copyDir(src, dest) {
 
 // 2. Scan and Build Subprojects
 const knownMeta = {
+  'slot9/lab4-hooks': {
+    title: 'BTVN Lab 4: React Hooks (useState, useReducer, useContext)',
+    slotTag: 'Slot 9',
+    desc: 'Trọn bộ 10 bài tập Hook React cơ bản: QuantityPicker, Live Preview, ProductFilter, Register Form Validation, Todo List, Reducer Cart & Login, Theme/Auth Context và Mini Store App.',
+    features: [
+      'Bài 1-3: useState, Functional Update & Derived State',
+      'Bài 4-6: Controlled Forms, Validation & Todo List bất biến',
+      'Bài 7-8: useReducer cho Giỏ hàng & Form đăng nhập',
+      'Bài 9-10: useContext chia sẻ Theme/Auth & Mini Store tổng hợp',
+    ],
+  },
+  'slot9/theme-context-demo': {
+    title: 'Slot 9: Theme Context & Global State',
+    slotTag: 'Slot 9',
+    desc: 'Chuyên đề thực hành useContext với ThemeContext, CartContext, AuthContext, LanguageContext và ToastContext.',
+    features: [
+      'ThemeContext đổi giao diện sáng/tối',
+      'CartContext giỏ hàng tối ưu re-render',
+      'AuthContext phiên đăng nhập',
+      'LanguageContext & ToastContext',
+    ],
+  },
+  'slot8/usereducer-exercises': {
+    title: 'Exercise 13: useReducer Hook & State Machines',
+    slotTag: 'Slot 8',
+    desc: 'Thực hành chuyên sâu useReducer quản lý state phức tạp: Step Counter, Order Tracker, Kanban Board, Multi-step Form Wizard và Undo/Redo Notes Board.',
+    features: [
+      'StepCounter với bước nhảy và lịch sử',
+      'OrderTracker với máy trạng thái đơn hàng',
+      'KanbanBoard kéo thả và chuyển đổi cột',
+      'CourseWizard và NotesBoard có hoàn tác',
+    ],
+  },
   'slot7/usestate-exercises': {
     title: 'Exercise 12: useState Hooks & Interactive UI',
     slotTag: 'Slot 7',

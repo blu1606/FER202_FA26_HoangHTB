@@ -16,6 +16,7 @@ import TodoList from './components/TodoList';
 import CartDemoPage from './pages/CartDemoPage';
 import LoginForm from './components/LoginForm';
 import ThemeAuthDemoPage from './pages/ThemeAuthDemoPage';
+import MiniStoreApp from './pages/MiniStoreApp';
 
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { AuthProvider } from './context/AuthContext';
@@ -183,6 +184,13 @@ function AppContent() {
         {currentTab === 9 && (
           <div id="exercise-9">
             <ThemeAuthDemoPage />
+          </div>
+        )}
+
+        {/* Tab 10: Bài 10 */}
+        {currentTab === 10 && (
+          <div id="exercise-10">
+            <MiniStoreApp />
           </div>
         )}
       </Container>
