@@ -1,122 +1,107 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Badge from 'react-bootstrap/Badge';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
-function App() {
-  const [count, setCount] = useState(0)
+import ThemeSwitcher from './components/ThemeSwitcher';
+import { useTheme } from './contexts/ThemeContext';
+import { TABS_CONFIG } from './data/exercise-data';
+
+export default function App() {
+  const [activeTab, setActiveTab] = useState('all');
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === 'dark';
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className={`min-vh-100 d-flex flex-column transition-all ${isDark ? 'bg-black text-light' : 'bg-light text-dark'}`}>
+      {/* Top Navbar */}
+      <Navbar bg={isDark ? 'dark' : 'white'} variant={isDark ? 'dark' : 'light'} expand="lg" className="shadow-sm py-3 mb-4 border-bottom">
+        <Container>
+          <Navbar.Brand className="d-flex align-items-center gap-2 fw-bold">
+            <span className="badge bg-primary fs-6">Slot 9</span>
+            <span>React Hook: useContext Demo</span>
+          </Navbar.Brand>
+          <div className="d-flex align-items-center gap-3">
+            <Button
+              variant={isDark ? 'outline-warning' : 'outline-dark'}
+              size="sm"
+              onClick={toggleTheme}
+              className="d-flex align-items-center gap-1 shadow-sm"
+            >
+              <span>{isDark ? '☀️' : '🌙'}</span>
+              <span className="d-none d-sm-inline">{isDark ? 'Light Mode' : 'Dark Mode'}</span>
+            </Button>
+            <Navbar.Text className={`${isDark ? 'text-white-50' : 'text-muted'} small d-none d-md-block`}>
+              FER202 • FPT University
+            </Navbar.Text>
+          </div>
+        </Container>
+      </Navbar>
 
-      <div className="ticks"></div>
+      <Container className="flex-grow-1 pb-5">
+        {/* Header Hero */}
+        <div className={`p-4 rounded shadow-sm mb-4 border ${isDark ? 'bg-dark border-secondary' : 'bg-white'}`}>
+          <div className="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3 pb-3 border-bottom border-secondary-subtle">
+            <div>
+              <h4 className="fw-bold mb-1">Thực hành React Hook: useContext</h4>
+              <p className={`${isDark ? 'text-secondary' : 'text-muted'} mb-0 small`}>
+                Khắc phục Prop Drilling: Quản lý Theme, Giỏ hàng tối ưu (useReducer), Xác thực (AuthContext), Đa ngôn ngữ (i18n), và Thông báo (Toast).
+              </p>
+            </div>
+            <Badge bg="primary" className="px-3 py-2 fs-6">
+              Slot 9 — useContext
+            </Badge>
+          </div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+          {/* Tab Navigation */}
+          <Nav
+            variant="pills"
+            activeKey={activeTab}
+            onSelect={(k) => setActiveTab(k || 'all')}
+            className="flex-wrap gap-2 pt-1"
+          >
+            {TABS_CONFIG.map((t) => (
+              <Nav.Item key={t.key}>
+                <Nav.Link
+                  eventKey={t.key}
+                  className={`px-3 py-2 fw-medium ${
+                    activeTab === t.key
+                      ? 'bg-primary text-white shadow-sm'
+                      : isDark
+                      ? 'bg-secondary text-white'
+                      : 'bg-light text-dark'
+                  }`}
+                  style={{ cursor: 'pointer' }}
+                >
+                  {t.label}
+                </Nav.Link>
+              </Nav.Item>
+            ))}
+          </Nav>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        {/* Content Section */}
+        <Row className="justify-content-center">
+          <Col lg={11} xl={10}>
+            {(activeTab === 'all' || activeTab === 'ex1') && (
+              <div id="exercise-1">
+                <ThemeSwitcher />
+              </div>
+            )}
+          </Col>
+        </Row>
+      </Container>
+
+      {/* Footer */}
+      <footer className={`border-top py-3 text-center small mt-auto ${isDark ? 'bg-dark text-secondary border-secondary' : 'bg-white text-muted'}`}>
+        <Container>
+          <span>FER202 — Front-End Web Development • Slot 9 useContext • FPT University</span>
+        </Container>
+      </footer>
+    </div>
+  );
 }
-
-export default App
