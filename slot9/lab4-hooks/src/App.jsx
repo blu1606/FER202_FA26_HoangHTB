@@ -12,6 +12,7 @@ import RegisterForm from './components/RegisterForm';
 import ValidatedRegisterForm from './components/ValidatedRegisterForm';
 import TodoList from './components/TodoList';
 import CartDemoPage from './pages/CartDemoPage';
+import LoginForm from './components/LoginForm';
 import { products } from './data/products';
 
 const EXERCISES = [
@@ -151,6 +152,13 @@ export default function App() {
         {currentTab === 7 && (
           <div id="exercise-7">
             <CartDemoPage />
+          </div>
+        )}
+
+        {/* Tab 8: Bài 8 */}
+        {currentTab === 8 && (
+          <div id="exercise-8">
+            <LoginForm />
           </div>
         )}
       </Container>
