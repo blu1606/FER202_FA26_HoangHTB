@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 
 import ThemeSwitcher from './components/ThemeSwitcher';
 import CartManager from './components/CartManager';
+import AuthManager from './components/AuthManager';
 import { useTheme } from './contexts/ThemeContext';
 import { TABS_CONFIG } from './data/exercise-data';
 
@@ -97,6 +98,12 @@ export default function App() {
             {(activeTab === 'all' || activeTab === 'ex2') && (
               <div id="exercise-2">
                 <CartManager />
+              </div>
+            )}
+
+            {(activeTab === 'all' || activeTab === 'ex3') && (
+              <div id="exercise-3">
+                <AuthManager />
               </div>
             )}
           </Col>
