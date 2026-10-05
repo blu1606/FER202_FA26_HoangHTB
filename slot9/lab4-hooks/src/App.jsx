@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 import QuantityPicker from './components/QuantityPicker';
 import MiniCart from './components/MiniCart';
+import ProfilePreview from './components/ProfilePreview';
 
 const EXERCISES = [
   { id: 1, title: 'Bài 1: useState Cơ bản', desc: 'QuantityPicker & MiniCart' },
@@ -102,6 +103,13 @@ export default function App() {
                 <MiniCart />
               </Card.Body>
             </Card>
+          </div>
+        )}
+
+        {/* Tab 2: Bài 2 */}
+        {currentTab === 2 && (
+          <div id="exercise-2">
+            <ProfilePreview />
           </div>
         )}
       </Container>
