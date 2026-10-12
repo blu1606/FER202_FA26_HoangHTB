@@ -8,6 +8,7 @@ const MENU = [
     { to: '/skills', label: 'Kỹ năng' },
     { to: '/projects', label: 'Dự án' },
     { to: '/contact', label: 'Liên hệ' },
+    { to: '/courses', label: 'Khoá học' }
 ];
 
 export default function MyNavBar() {
