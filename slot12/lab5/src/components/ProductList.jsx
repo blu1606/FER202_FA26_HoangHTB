@@ -5,23 +5,12 @@ import MyProduct from './MyProduct';
 
 export default function ProductList() {
   return (
-    <div className="product-list-page py-3">
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <div>
-          <h2 className="fw-bold text-primary mb-1">Danh Sách Sản Phẩm</h2>
-          <p className="text-secondary small mb-0">
-            Hiển thị các khóa học, tài liệu và dịch vụ ôn tập có sẵn
-          </p>
-        </div>
-        <span className="badge bg-primary fs-6">
-          Tổng số: {products.length} sản phẩm
-        </span>
-      </div>
+    <div className="py-3">
+      <h2 className="mb-4">Product List</h2>
 
-      {/* Dùng method map() để duyệt qua danh sách products */}
-      <Row xs={1} sm={2} md={3} lg={4} className="g-4">
+      <Row>
         {products.map((item) => (
-          <Col key={item.id}>
+          <Col md={4} key={item.id} className="mb-4">
             <MyProduct product={item} />
           </Col>
         ))}
