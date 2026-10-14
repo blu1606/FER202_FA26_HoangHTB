@@ -4,6 +4,10 @@
 
 ---
 
+`pnpm create vite@latest`
+`pnpm add react-router-dom react-bootstrap bootstrap bootstrap-icons`
+
+
 ### 📋 Danh Sách Bài Thực Hành
 
 | Slot | Bài tập | Trọng tâm công nghệ | Live Demo |
