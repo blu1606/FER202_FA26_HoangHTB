@@ -4,17 +4,18 @@ import NewsPage from './components/NewsPage';
 import QuizPage from './components/QuizPage';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
-import MyNavBar from './components/MyNavBar'
-import Footer from './components/Footer'
-import './App.css'
-
+import MyNavBar from './components/MyNavBar';
+import MyCarousel from './components/MyCarousel';
+import Footer from './components/Footer';
 
 function App() {
-
   return (
     <BrowserRouter>
       <MyNavBar />
       <div className="container mt-4">
+        {/* Hiển thị Carousel ở tất cả các trang theo yêu cầu */}
+        <MyCarousel />
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/news" element={<NewsPage />} />
@@ -25,7 +26,7 @@ function App() {
       </div>
       <Footer />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
