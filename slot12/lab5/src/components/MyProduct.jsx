@@ -8,7 +8,7 @@ export default function MyProduct({ product }) {
   const formattedPrice = Number(price || 0).toLocaleString('vi-VN') + ' đ';
   
   // Kiểm tra điều kiện giảm giá
-  const hasDiscount = discount && Number(discount) > 0;
+  const hasDiscount = Number(discount) > 0;
 
   return (
     <Card className="h-100 shadow-sm">
@@ -33,11 +33,11 @@ export default function MyProduct({ product }) {
         </p>
 
         {/* Chỉ hiển thị button khi: có giảm giá VÀ còn hàng */}
-        {hasDiscount && instock && (
+        {hasDiscount && instock ? (
           <Button variant="primary" className="mt-auto">
             Thêm vào giỏ
           </Button>
-        )}
+        ) : null}
       </Card.Body>
     </Card>
   );
