@@ -28,6 +28,9 @@ export default function Footer() {
                                 <Link to="/quiz">Quiz</Link>
                             </li>
                             <li className="mb-2">
+                                <Link to="/products">Sản Phẩm</Link>
+                            </li>
+                            <li className="mb-2">
                                 <Link to="/about">Giới Thiệu</Link>
                             </li>
                             <li className="mb-2">

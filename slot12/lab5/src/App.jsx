@@ -4,6 +4,7 @@ import NewsPage from './components/NewsPage';
 import QuizPage from './components/QuizPage';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
+import ProductList from './components/ProductList';
 import MyNavBar from './components/MyNavBar';
 import MyCarousel from './components/MyCarousel';
 import Footer from './components/Footer';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/quiz" element={<QuizPage />} />
+          <Route path="/products" element={<ProductList />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

@@ -23,6 +23,9 @@ export default function MyNavBar() {
                         <Nav.Link as={NavLink} to="/quiz">
                             Quiz
                         </Nav.Link>
+                        <Nav.Link as={NavLink} to="/products">
+                            Products
+                        </Nav.Link>
                         <Nav.Link as={NavLink} to="/about">
                             About
                         </Nav.Link>
