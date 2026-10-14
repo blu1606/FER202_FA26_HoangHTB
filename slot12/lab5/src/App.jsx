@@ -5,7 +5,7 @@ import QuizPage from './components/QuizPage';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
 import MyNavBar from './components/MyNavBar'
-
+import Footer from './components/Footer'
 import './App.css'
 
 
@@ -23,6 +23,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   )
 }
