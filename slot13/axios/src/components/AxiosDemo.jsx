@@ -7,7 +7,13 @@ const AxiosDemo = () => {
 
     useEffect(() => {
         axios.get(
-            'https://jsonplaceholder.typicode.com/posts/1'
+            'https://jsonplaceholder.typicode.com/posts/',
+            {
+                params: {
+                    userId: 1,
+                    _limit: 5
+                }
+            }
         ).then(
             response => {
                 setData(response.data)
@@ -26,13 +32,21 @@ const AxiosDemo = () => {
     return (
         <div>
             <h1>Axios Demo</h1>
-            {data ? (
-                <div>
-                    <h2>{data.title}</h2>
-                    <p>{data.body}</p>
-                </div>
-            ) : (
+            <h2>2.1 List 5 post of user 1</h2>
+            {!data ? (
                 <div>Loading...</div>
+            ) : (
+                <div>
+                    {data.map(post => (
+                        <li key={post.id}>
+
+                            <div key={post.id}>
+                                <h4>{post.title}</h4>
+                                <p>{post.body}</p>
+                            </div>
+                        </li>
+                    ))}
+                </div>
             )}
         </div>
     );
