@@ -1,13 +1,15 @@
 name: Vercel CI/CD Build & Deploy
 
+# Tạm thời disable CI/CD tự động deploy lên Vercel
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
 
 jobs:
   Deploy-Production:
+    if: false # Disabled
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
