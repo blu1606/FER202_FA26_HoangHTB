@@ -8,25 +8,31 @@ const UpdatePost = () => {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
-  // 1. Lấy dữ liệu cũ
   useEffect(() => {
-    axios
-      .get(URL)
-      .then(response => setPost(response.data))
-      .catch(error => setError(error.message));
+    const fetchPost = async () => {
+      try {
+        const response = await axios.get(URL);
+        setPost(response.data);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchPost();
   }, []);
 
-  // 2. Gửi PUT với đầy đủ các trường
-  const handleUpdate = () => {
-    axios
-      .put(URL, {
+  const handleUpdate = async () => {
+    try {
+      const response = await axios.put(URL, {
         id: post.id,
         userId: post.userId,
         title: post.title,
         body: post.body,
-      })
-      .then(response => setResult({ status: response.status, data: response.data }))
-      .catch(error => setError(error.message));
+      });
+      setResult({ status: response.status, data: response.data });
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   if (error) return <div>Error: {error}</div>;

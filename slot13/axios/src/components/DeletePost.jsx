@@ -9,22 +9,28 @@ const DeletePost = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(API, { params: { _limit: 5 } })
-      .then(response => setPosts(response.data))
-      .catch(error => setError(error.message));
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get(API, { params: { _limit: 5 } });
+        setPosts(response.data);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchPosts();
   }, []);
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     if (!window.confirm(`Xóa bài viết #${id}?`)) return;
 
-    axios
-      .delete(`${API}/${id}`)
-      .then(response => {
-        setPosts(posts.filter(p => p.id !== id));   // cập nhật giao diện
-        setMessage(`Đã xóa bài #${id} – Status: ${response.status}`);
-      })
-      .catch(error => setError(error.message));
+    try {
+      const response = await axios.delete(`${API}/${id}`);
+      setPosts(prev => prev.filter(p => p.id !== id));
+      setMessage(`Đã xóa bài #${id} – Status: ${response.status}`);
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   if (error) return <div>Error: {error}</div>;

@@ -6,11 +6,13 @@ const PatchPost = () => {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
-  const handlePatch = () => {
-    axios
-      .patch('https://jsonplaceholder.typicode.com/posts/1', { title })   // chỉ gửi 1 trường
-      .then(response => setResult({ status: response.status, data: response.data }))
-      .catch(error => setError(error.message));
+  const handlePatch = async () => {
+    try {
+      const response = await axios.patch('https://jsonplaceholder.typicode.com/posts/1', { title });
+      setResult({ status: response.status, data: response.data });
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (

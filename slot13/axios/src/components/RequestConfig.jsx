@@ -6,29 +6,32 @@ const RequestConfig = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios({
-      method: 'get',
-      url: 'https://jsonplaceholder.typicode.com/posts',
-      params: { _page: 1, _limit: 3 },
-      headers: {
-        Accept: 'application/json',
-        Authorization: 'Bearer demo-token-123',   // ví dụ header xác thực
-      },
-      timeout: 5000,                               // quá 5 giây → lỗi
-    })
-      .then(response => {
+    const fetchWithConfig = async () => {
+      try {
+        const response = await axios({
+          method: 'get',
+          url: 'https://jsonplaceholder.typicode.com/posts',
+          params: { _page: 1, _limit: 3 },
+          headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer demo-token-123',
+          },
+          timeout: 5000,
+        });
         setInfo({
           status: response.status,
           contentType: response.headers['content-type'],
           total: response.headers['x-total-count'],
           data: response.data,
         });
-      })
-      .catch(error => {
-        if (error.code === 'ECONNABORTED') setError('Request quá thời gian (timeout)');
-        else if (error.response) setError(`Server trả lỗi ${error.response.status}`);
-        else setError(error.message);
-      });
+      } catch (err) {
+        if (err.code === 'ECONNABORTED') setError('Request quá thời gian (timeout)');
+        else if (err.response) setError(`Server trả lỗi ${err.response.status}`);
+        else setError(err.message);
+      }
+    };
+
+    fetchWithConfig();
   }, []);
 
   if (error) return <div>Error: {error}</div>;
