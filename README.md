@@ -6,7 +6,8 @@
 
 `pnpm create vite@latest`
 `pnpm add react-router-dom react-bootstrap bootstrap bootstrap-icons`
-
+`pnpm add axios`
+`import 'bootstrap/dist/css/bootstrap.min.css';`
 
 ### 📋 Danh Sách Bài Thực Hành
 
