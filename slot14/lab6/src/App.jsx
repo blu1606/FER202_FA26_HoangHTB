@@ -5,13 +5,14 @@ import UpdatePost from './components/UpdatePost';
 import PatchPost from './components/PatchPost';
 import DeletePost from './components/DeletePost';
 import RequestConfig from './components/RequestConfig';
+import PostDetail from './components/PostDetail';
 
 function App() {
   return (
     <div style={{ maxWidth: '800px', margin: '20px auto', padding: '0 16px', fontFamily: 'sans-serif' }}>
       <header style={{ textAlign: 'center', marginBottom: '24px' }}>
         <h1>Exercise 27: Demo about AXIOS</h1>
-        <p style={{ color: '#666' }}>Phần 1 và Phần 2 (7 component kết nối JSONPlaceholder)</p>
+        <p style={{ color: '#666' }}>Phần 1 và Phần 2 (7 component) + Phần 3 (Nâng cao NC)</p>
       </header>
       <AxiosDemo />
       <hr />
@@ -26,6 +27,8 @@ function App() {
       <DeletePost />
       <hr />
       <RequestConfig />
+      <hr />
+      <PostDetail postId={1} />
     </div>
   );
 }
