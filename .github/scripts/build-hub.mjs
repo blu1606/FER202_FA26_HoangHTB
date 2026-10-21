@@ -30,6 +30,47 @@ function copyDir(src, dest) {
 
 // 2. Scan and Build Subprojects
 const knownMeta = {
+  'slot14/lab6': {
+    title: 'Lab 6: JSON Server & Axios Pro (NC1 - NC10)',
+    slotTag: 'Slot 14',
+    desc: 'Ứng dụng quản lý bài viết hoàn chỉnh với React Router, React-Bootstrap, Custom Hook useAxios, AbortController, Debounced Search, Batch Delete và Optimistic UI.',
+    features: [
+      'Async/Await, Axios Client Interceptors & Service Layer',
+      'Promise.allSettled & AbortController hủy request',
+      'React Router CRUD, Multi-page, useSearchParams & Flash Messages',
+      'Debounced Search, Batch Deletion & Optimistic UI Rollback',
+    ],
+  },
+  'slot13/axios': {
+    title: 'Exercise 27: Axios HTTP Requests & API Integration',
+    slotTag: 'Slot 13',
+    desc: 'Thực hành các phương thức HTTP (GET, POST, PUT, PATCH, DELETE) với Axios, cấu hình Request Config và xử lý bất đồng bộ.',
+    features: [
+      'HTTP Methods: GET, POST, PUT, PATCH, DELETE',
+      'Request Configuration: Headers, Params, Timeout',
+      'Xử lý trạng thái Loading và Error State',
+    ],
+  },
+  'slot12/lab5': {
+    title: 'Lab 5: React Router SPA Navigation',
+    slotTag: 'Slot 12',
+    desc: 'Xây dựng ứng dụng đơn trang (SPA) với React Router: Dynamic Routing, Nested Routes, NavLink và Layout.',
+    features: [
+      'Cấu hình Router với BrowserRouter và Routes',
+      'Dynamic Routing với useParams và useNavigate',
+      'Tích hợp Bootstrap giao diện responsive',
+    ],
+  },
+  'slot11/router-basic-v2': {
+    title: 'React Router Cơ Bản v2',
+    slotTag: 'Slot 11',
+    desc: 'Làm quen với React Router v7: Định tuyến cơ bản, điều hướng giữa các trang và phân chia bố cục giao diện.',
+    features: [
+      'Định tuyến cơ bản Link, NavLink',
+      'Quản lý trạng thái định tuyến',
+      'Giao diện React Bootstrap',
+    ],
+  },
   'slot9/lab4-hooks': {
     title: 'BTVN Lab 4: React Hooks (useState, useReducer, useContext)',
     slotTag: 'Slot 9',

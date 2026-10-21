@@ -24,6 +24,10 @@
 | **Slot 8** | Exercise 13: useReducer | Complex state management, Kanban, Order Tracker | [Xem Demo](/slot8/usereducer-exercises/) |
 | **Slot 9** | Theme Context Demo | useContext Theme, Cart, Auth, Language, Toast | [Xem Demo](/slot9/theme-context-demo/) |
 | **Slot 9** | BTVN Lab 4: React Hooks | 10 bài tập toàn diện useState, useReducer, useContext | [Xem Demo](/slot9/lab4-hooks/) |
+| **Slot 11** | React Router Cơ Bản | BrowserRouter, Routes, Route, Link, NavLink | [Xem Demo](/slot11/router-basic-v2/) |
+| **Slot 12** | Lab 5: React Router SPA | Nested Routes, useParams, useNavigate, Layout | [Xem Demo](/slot12/lab5/) |
+| **Slot 13** | Exercise 27: Axios HTTP | GET, POST, PUT, PATCH, DELETE, Request Config | [Xem Demo](/slot13/axios/) |
+| **Slot 14** | Lab 6: JSON Server & Axios Pro | NC1–NC10: useAxios, Debounce, Batch Delete, Optimistic UI | [Xem Demo](/slot14/lab6/) |
 
 ---
 
