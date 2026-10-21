@@ -14,6 +14,9 @@ export default function AppNavbar() {
             <Nav.Link as={NavLink} to="/posts" end>Bài viết</Nav.Link>
             <Nav.Link as={NavLink} to="/posts/new">+ Tạo bài viết</Nav.Link>
           </Nav>
+          <Navbar.Text className="small">
+            API: {import.meta.env.VITE_API_URL || "http://localhost:3001"}
+          </Navbar.Text>
         </Navbar.Collapse>
       </Container>
     </Navbar>

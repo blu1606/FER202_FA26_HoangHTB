@@ -1,0 +1,370 @@
+{
+  "posts": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "sunt aut facere repellat provident",
+      "body": "Nội dung bài viết số 1. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "qui est esse",
+      "body": "Nội dung bài viết số 2. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "ea molestias quasi exercitationem",
+      "body": "Nội dung bài viết số 3. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "eum et est occaecati",
+      "body": "Nội dung bài viết số 4. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 2,
+      "id": 5,
+      "title": "nesciunt quas odio",
+      "body": "Nội dung bài viết số 5. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 2,
+      "id": 6,
+      "title": "dolorem eum magni eos aperiam",
+      "body": "Nội dung bài viết số 6. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 2,
+      "id": 7,
+      "title": "magnam facilis autem",
+      "body": "Nội dung bài viết số 7. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 2,
+      "id": 8,
+      "title": "dolorem dolore est ipsam",
+      "body": "Nội dung bài viết số 8. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 3,
+      "id": 9,
+      "title": "nesciunt iure omnis dolorem tempora",
+      "body": "Nội dung bài viết số 9. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 3,
+      "id": 10,
+      "title": "optio molestias id quia eum",
+      "body": "Nội dung bài viết số 10. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 3,
+      "id": 11,
+      "title": "et ea vero quia laudantium",
+      "body": "Nội dung bài viết số 11. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 3,
+      "id": 12,
+      "title": "in quibusdam tempore odit est",
+      "body": "Nội dung bài viết số 12. quia et suscipit suscipit recusandae consequuntur expedita et cum."
+    },
+    {
+      "userId": 1,
+      "id": 13,
+      "title": "qui est esse react",
+      "body": "Nội dung bài viết số 13 về qui est esse react."
+    },
+    {
+      "userId": 2,
+      "id": 14,
+      "title": "axios interceptors demo",
+      "body": "Nội dung bài viết số 14 về axios interceptors demo."
+    },
+    {
+      "userId": 3,
+      "id": 15,
+      "title": "react router nested routes",
+      "body": "Nội dung bài viết số 15 về react router nested routes."
+    },
+    {
+      "userId": 1,
+      "id": 16,
+      "title": "json server la gi",
+      "body": "Nội dung bài viết số 16 về json server la gi."
+    },
+    {
+      "userId": 2,
+      "id": 17,
+      "title": "bootstrap card layout",
+      "body": "Nội dung bài viết số 17 về bootstrap card layout."
+    },
+    {
+      "userId": 3,
+      "id": 18,
+      "title": "promise all va allsettled",
+      "body": "Nội dung bài viết số 18 về promise all va allsettled."
+    },
+    {
+      "userId": 1,
+      "id": 19,
+      "title": "abort controller trong react",
+      "body": "Nội dung bài viết số 19 về abort controller trong react."
+    },
+    {
+      "userId": 2,
+      "id": 20,
+      "title": "custom hook useAxios",
+      "body": "Nội dung bài viết số 20 về custom hook useAxios."
+    }
+  ],
+  "comments": [
+    {
+      "postId": 1,
+      "id": 1,
+      "name": "Bình luận 1",
+      "email": "user1@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 1,
+      "id": 2,
+      "name": "Bình luận 2",
+      "email": "user2@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 2,
+      "id": 3,
+      "name": "Bình luận 3",
+      "email": "user3@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 2,
+      "id": 4,
+      "name": "Bình luận 4",
+      "email": "user4@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 3,
+      "id": 5,
+      "name": "Bình luận 5",
+      "email": "user5@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 3,
+      "id": 6,
+      "name": "Bình luận 6",
+      "email": "user6@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 4,
+      "id": 7,
+      "name": "Bình luận 7",
+      "email": "user7@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 4,
+      "id": 8,
+      "name": "Bình luận 8",
+      "email": "user8@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 5,
+      "id": 9,
+      "name": "Bình luận 9",
+      "email": "user9@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 5,
+      "id": 10,
+      "name": "Bình luận 10",
+      "email": "user10@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 6,
+      "id": 11,
+      "name": "Bình luận 11",
+      "email": "user11@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 6,
+      "id": 12,
+      "name": "Bình luận 12",
+      "email": "user12@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 7,
+      "id": 13,
+      "name": "Bình luận 13",
+      "email": "user13@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 7,
+      "id": 14,
+      "name": "Bình luận 14",
+      "email": "user14@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 8,
+      "id": 15,
+      "name": "Bình luận 15",
+      "email": "user15@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 8,
+      "id": 16,
+      "name": "Bình luận 16",
+      "email": "user16@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 9,
+      "id": 17,
+      "name": "Bình luận 17",
+      "email": "user17@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 9,
+      "id": 18,
+      "name": "Bình luận 18",
+      "email": "user18@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 10,
+      "id": 19,
+      "name": "Bình luận 19",
+      "email": "user19@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 10,
+      "id": 20,
+      "name": "Bình luận 20",
+      "email": "user20@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 11,
+      "id": 21,
+      "name": "Bình luận 21",
+      "email": "user21@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 11,
+      "id": 22,
+      "name": "Bình luận 22",
+      "email": "user22@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 12,
+      "id": 23,
+      "name": "Bình luận 23",
+      "email": "user23@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 12,
+      "id": 24,
+      "name": "Bình luận 24",
+      "email": "user24@mail.com",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos"
+    },
+    {
+      "postId": 13,
+      "id": 25,
+      "name": "Bình luận cho bài 13",
+      "email": "sv@fpt.edu.vn",
+      "body": "Bài viết rất hữu ích!"
+    },
+    {
+      "postId": 14,
+      "id": 26,
+      "name": "Bình luận cho bài 14",
+      "email": "sv@fpt.edu.vn",
+      "body": "Bài viết rất hữu ích!"
+    },
+    {
+      "postId": 15,
+      "id": 27,
+      "name": "Bình luận cho bài 15",
+      "email": "sv@fpt.edu.vn",
+      "body": "Bài viết rất hữu ích!"
+    },
+    {
+      "postId": 16,
+      "id": 28,
+      "name": "Bình luận cho bài 16",
+      "email": "sv@fpt.edu.vn",
+      "body": "Bài viết rất hữu ích!"
+    },
+    {
+      "postId": 17,
+      "id": 29,
+      "name": "Bình luận cho bài 17",
+      "email": "sv@fpt.edu.vn",
+      "body": "Bài viết rất hữu ích!"
+    },
+    {
+      "postId": 18,
+      "id": 30,
+      "name": "Bình luận cho bài 18",
+      "email": "sv@fpt.edu.vn",
+      "body": "Bài viết rất hữu ích!"
+    },
+    {
+      "postId": 19,
+      "id": 31,
+      "name": "Bình luận cho bài 19",
+      "email": "sv@fpt.edu.vn",
+      "body": "Bài viết rất hữu ích!"
+    },
+    {
+      "postId": 20,
+      "id": 32,
+      "name": "Bình luận cho bài 20",
+      "email": "sv@fpt.edu.vn",
+      "body": "Bài viết rất hữu ích!"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz"
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "email": "Shanna@melissa.tv"
+    },
+    {
+      "id": 3,
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "email": "Nathan@yesenia.net"
+    }
+  ]
+}

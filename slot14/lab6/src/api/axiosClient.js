@@ -2,7 +2,7 @@ import axios from "axios";
 
 // NC2 – axios instance dùng chung
 const axiosClient = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com", // NC7 sẽ đổi sang biến môi trường
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:3001",
   timeout: 8000,
   headers: {
     "Content-Type": "application/json; charset=UTF-8",
