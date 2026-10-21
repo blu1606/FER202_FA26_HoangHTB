@@ -1,37 +1,47 @@
-// NC6 – Danh sách: phân trang + lọc tác giả lưu trên URL (useSearchParams) · NC8: useAxios
+// NC6 (useSearchParams) · NC8 (useAxios) · NC9 (tìm kiếm debounce, q trên URL)
+import { useState, useEffect } from "react";
 import { Link, useSearchParams, useOutletContext } from "react-router-dom";
-import { Table, Form, Pagination, Spinner, Button, Row, Col, Badge } from "react-bootstrap";
+import { Table, Form, Pagination, Spinner, Button, Row, Col, Badge, InputGroup } from "react-bootstrap";
 import useAxios from "../hooks/useAxios";
+import useDebounce from "../hooks/useDebounce";
 import useFlash from "../hooks/useFlash";
 import postApi, { userApi } from "../api/postApi";
 import ConfirmModal from "../components/ConfirmModal";
 import ErrorAlert from "../components/common/ErrorAlert";
-import { useState } from "react";
 
 const LIMIT = 5;
 
 export default function PostListPage() {
-  useFlash(); // hiện thông báo khi được navigate tới kèm state.flash
+  useFlash();
   const { notify } = useOutletContext();
 
-  // ----- Trạng thái lọc lưu trên URL: /posts?page=2&userId=1 -----
+  // ----- Trạng thái lọc lưu trên URL: /posts?page=2&userId=1&q=react -----
   const [searchParams, setSearchParams] = useSearchParams();
   const page = Number(searchParams.get("page") ?? 1);
   const userId = searchParams.get("userId") ?? "";
+  const q = searchParams.get("q") ?? "";
 
   const changeQuery = (next) => {
-    const merged = { page: String(page), userId, ...next };
+    const merged = { page: String(page), userId, q, ...next };
     Object.keys(merged).forEach((k) => (merged[k] === "" || merged[k] == null) && delete merged[k]);
     setSearchParams(merged);
   };
 
-  // ----- NC8: đọc danh sách tác giả bằng useAxios -----
+  // ----- NC9: ô tìm kiếm + debounce 500ms → ghi q lên URL -----
+  const [keyword, setKeyword] = useState(q);
+  const debounced = useDebounce(keyword.trim(), 500);
+  useEffect(() => {
+    if (debounced !== q) changeQuery({ q: debounced, page: "1" });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debounced]);
+
+  // ----- NC8: đọc dữ liệu bằng useAxios -----
   const { data: users } = useAxios((signal) => userApi.getAll(signal), [], { initialData: [] });
 
   const params = { _page: page, _limit: LIMIT };
   if (userId) params.userId = userId;
+  if (q) params.q = q;
 
-  // ----- NC8: đọc danh sách bài viết bằng useAxios -----
   const {
     data: posts,
     setData: setPosts,
@@ -39,13 +49,13 @@ export default function PostListPage() {
     loading,
     error,
     refetch,
-  } = useAxios((signal) => postApi.getAll(params, signal), [page, userId], { initialData: [] });
+  } = useAxios((signal) => postApi.getAll(params, signal), [page, userId, q], { initialData: [] });
 
   const total = Number(headers["x-total-count"] ?? posts.length);
   const totalPages = Math.max(1, Math.ceil(total / LIMIT));
   const authorName = (id) => users.find((u) => u.id === id)?.name ?? `User ${id}`;
 
-  // ----- Xóa 1 bài: hỏi xác nhận bằng Modal → DELETE → cập nhật state -----
+  // ----- Xóa 1 bài -----
   const [toDelete, setToDelete] = useState(null);
   const [deleting, setDeleting] = useState(false);
   const handleDeleteOne = async () => {
@@ -53,7 +63,7 @@ export default function PostListPage() {
     try {
       const res = await postApi.remove(toDelete.id);
       setPosts((prev) => prev.filter((p) => p.id !== toDelete.id));
-      refetch(); // tải lại để cập nhật tổng và lấp chỗ trống
+      refetch();
       notify("success", `DELETE /posts/${toDelete.id} → ${res.status}`);
     } catch (err) {
       notify("danger", "Xóa thất bại: " + err.userMessage);
@@ -75,6 +85,21 @@ export default function PostListPage() {
       </div>
 
       <Row className="mb-3 g-2">
+        <Col md={6}>
+          <InputGroup>
+            <InputGroup.Text>🔍</InputGroup.Text>
+            <Form.Control
+              placeholder="Tìm bài viết..."
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+            />
+            {keyword && (
+              <Button variant="outline-secondary" onClick={() => setKeyword("")}>
+                ✕
+              </Button>
+            )}
+          </InputGroup>
+        </Col>
         <Col md={4}>
           <Form.Select value={userId} onChange={(e) => changeQuery({ userId: e.target.value, page: "1" })}>
             <option value="">Tất cả tác giả</option>
