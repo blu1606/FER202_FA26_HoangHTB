@@ -2,9 +2,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Spinner, Alert, Form, Row, Col, Badge, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import postApi from "../api/postApi";
 
-export default function AxiosDemo() {
+export default function AxiosDemoPage() {
   const [postId, setPostId] = useState(1);
   const [data, setData] = useState(null);
   const [meta, setMeta] = useState(null); // { status, duration, contentType }
@@ -82,6 +83,7 @@ export default function AxiosDemo() {
               {data.title}
             </Card.Title>
             <Card.Text style={{ whiteSpace: "pre-line" }}>{data.body}</Card.Text>
+            <Link to={`/posts/${data.id}`}>Xem chi tiết & bình luận →</Link>
           </Card.Body>
           {meta && (
             <Card.Footer className="small text-muted">

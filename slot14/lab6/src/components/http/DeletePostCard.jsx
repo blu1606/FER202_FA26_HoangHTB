@@ -1,7 +1,8 @@
-// 2.5 – DELETE · NC5: Modal xác nhận (thay window.confirm) + Toast thông báo
+// 2.5 – DELETE · NC5 Modal · NC6: Toast dùng chung qua useOutletContext()
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Card, ListGroup, Button, Toast, ToastContainer } from "react-bootstrap";
+import { useOutletContext } from "react-router-dom";
+import { Card, ListGroup, Button } from "react-bootstrap";
 import postApi from "../../api/postApi";
 import ConfirmModal from "../ConfirmModal";
 import LoadingSpinner from "../common/LoadingSpinner";
@@ -9,12 +10,12 @@ import ErrorAlert from "../common/ErrorAlert";
 import EmptyState from "../common/EmptyState";
 
 export default function DeletePostCard() {
+  const { notify } = useOutletContext(); // hàm hiện Toast do Layout cung cấp
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [toDelete, setToDelete] = useState(null); // bài đang chờ xác nhận xóa
   const [deleting, setDeleting] = useState(false);
-  const [toast, setToast] = useState(null); // { bg, message }
 
   useEffect(() => {
     const controller = new AbortController();
@@ -38,10 +39,10 @@ export default function DeletePostCard() {
     try {
       const res = await postApi.remove(toDelete.id);
       setPosts((prev) => prev.filter((p) => p.id !== toDelete.id));
-      setToast({ bg: "success", message: `DELETE /posts/${toDelete.id} → ${res.status}` });
+      notify("success", `DELETE /posts/${toDelete.id} → ${res.status}`);
       setToDelete(null);
     } catch (err) {
-      setToast({ bg: "danger", message: "Xóa thất bại: " + err.userMessage });
+      notify("danger", "Xóa thất bại: " + err.userMessage);
     } finally {
       setDeleting(false);
     }
@@ -73,12 +74,6 @@ export default function DeletePostCard() {
         onConfirm={handleDelete}
         onCancel={() => setToDelete(null)}
       />
-
-      <ToastContainer position="bottom-end" className="p-3 position-fixed">
-        <Toast show={!!toast} bg={toast?.bg} onClose={() => setToast(null)} delay={3500} autohide>
-          <Toast.Body className="text-white">{toast?.message}</Toast.Body>
-        </Toast>
-      </ToastContainer>
     </Card>
   );
 }
