@@ -3,34 +3,32 @@ import axios from 'axios';
 
 const AxiosDemo = () => {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get('https://jsonplaceholder.typicode.com/posts/1')
-      .then(response => {
+    const fetchPost = async () => {
+      try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
         setData(response.data);
-      })
-      .catch(error => {
-        setError(error.message);
-      });
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPost();
   }, []);
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <div>
       <h1>Axios Demo</h1>
-      {data ? (
-        <div>
-          <h2>{data.title}</h2>
-          <p>{data.body}</p>
-        </div>
-      ) : (
-        <div>Loading...</div>
-      )}
+      <h2>{data.title}</h2>
+      <p>{data.body}</p>
     </div>
   );
 };
