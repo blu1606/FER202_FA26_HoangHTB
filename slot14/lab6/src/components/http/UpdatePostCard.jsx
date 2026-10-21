@@ -1,39 +1,23 @@
-// 2.3 – GET + PUT · NC5: Form.Control, Spinner trong nút
+// 2.3 – GET + PUT  ·  NC1 · NC8 (useAxios cho phần GET)
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { Card, Form, Button, Spinner, Alert } from "react-bootstrap";
+import useAxios from "../../hooks/useAxios";
+import AsyncContent from "../common/AsyncContent";
 import postApi from "../../api/postApi";
-import LoadingSpinner from "../common/LoadingSpinner";
-import ErrorAlert from "../common/ErrorAlert";
 import ResultBox from "./ResultBox";
 
 const POST_ID = 1;
 
 export default function UpdatePostCard() {
+  const { data, loading, error, refetch } = useAxios((signal) => postApi.getById(POST_ID, signal), []);
   const [form, setForm] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [saving, setSaving] = useState(false);
   const [result, setResult] = useState(null);
   const [saveError, setSaveError] = useState(null);
 
-  // GET dữ liệu cũ đổ vào form
   useEffect(() => {
-    const controller = new AbortController();
-    const load = async () => {
-      try {
-        const res = await postApi.getById(POST_ID, controller.signal);
-        setForm(res.data);
-      } catch (err) {
-        if (axios.isCancel(err)) return;
-        setError(err.userMessage);
-      } finally {
-        if (!controller.signal.aborted) setLoading(false);
-      }
-    };
-    load();
-    return () => controller.abort();
-  }, []);
+    if (data) setForm(data);
+  }, [data]); // đổ dữ liệu cũ vào form
 
   const handleUpdate = async () => {
     setSaving(true);
@@ -58,27 +42,29 @@ export default function UpdatePostCard() {
     <Card className="h-100 shadow-sm">
       <Card.Header><strong>2.3 · PUT</strong> /posts/{POST_ID}</Card.Header>
       <Card.Body>
-        {loading && <LoadingSpinner />}
-        {!loading && error && <ErrorAlert message={error} />}
-        {!loading && form && (
-          <>
-            <Form.Control
-              className="mb-2"
-              value={form.title}
-              onChange={(e) => setForm({ ...form, title: e.target.value })}
-            />
-            <Form.Control
-              as="textarea"
-              rows={3}
-              className="mb-2"
-              value={form.body}
-              onChange={(e) => setForm({ ...form, body: e.target.value })}
-            />
-            <Button variant="primary" onClick={handleUpdate} disabled={saving}>
-              {saving ? <><Spinner size="sm" /> Đang lưu...</> : "Cập nhật (PUT)"}
-            </Button>
-          </>
-        )}
+        <AsyncContent loading={loading || (!!data && !form)} error={error} data={data} onRetry={refetch}>
+          {() =>
+            form && (
+              <>
+                <Form.Control
+                  className="mb-2"
+                  value={form.title}
+                  onChange={(e) => setForm({ ...form, title: e.target.value })}
+                />
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  className="mb-2"
+                  value={form.body}
+                  onChange={(e) => setForm({ ...form, body: e.target.value })}
+                />
+                <Button variant="primary" onClick={handleUpdate} disabled={saving}>
+                  {saving ? <Spinner size="sm" /> : "Cập nhật (PUT)"}
+                </Button>
+              </>
+            )
+          }
+        </AsyncContent>
         {saveError && <Alert variant="danger" className="mt-3 mb-0">{saveError}</Alert>}
         <ResultBox result={result} />
       </Card.Body>

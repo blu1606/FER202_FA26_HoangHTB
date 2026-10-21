@@ -1,30 +1,16 @@
-// NC6 – POST: tạo xong → navigate về /posts kèm thông báo qua state
-import { useState, useEffect } from "react";
+// POST · NC1 · NC5 · NC6 (navigate + state) · NC8 (useAxios cho danh sách tác giả)
+import { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { Card } from "react-bootstrap";
+import useAxios from "../hooks/useAxios";
 import postApi, { userApi } from "../api/postApi";
 import PostForm from "../components/PostForm";
 
 export default function PostCreatePage() {
   const navigate = useNavigate();
   const { notify } = useOutletContext();
-  const [users, setUsers] = useState([]);
+  const { data: users } = useAxios((signal) => userApi.getAll(signal), [], { initialData: [] });
   const [submitting, setSubmitting] = useState(false);
-
-  // Danh sách tác giả cho Form.Select
-  useEffect(() => {
-    const controller = new AbortController();
-    const load = async () => {
-      try {
-        const res = await userApi.getAll(controller.signal);
-        setUsers(res.data);
-      } catch {
-        // lỗi hủy hoặc lỗi mạng: form vẫn dùng được, chỉ thiếu danh sách tác giả
-      }
-    };
-    load();
-    return () => controller.abort();
-  }, []);
 
   const handleCreate = async (values) => {
     setSubmitting(true);
