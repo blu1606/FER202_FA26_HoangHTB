@@ -1,0 +1,354 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@fpt.edu.vn",
+      "password": "12345678",
+      "fullName": "Quản trị viên",
+      "role": "admin",
+      "active": true,
+      "createdAt": "2026-01-05T08:00:00Z"
+    },
+    {
+      "id": 2,
+      "email": "sv@fpt.edu.vn",
+      "password": "12345678",
+      "fullName": "Nguyễn Văn An",
+      "role": "customer",
+      "active": true,
+      "createdAt": "2026-02-10T08:00:00Z"
+    },
+    {
+      "id": 3,
+      "email": "binh@fpt.edu.vn",
+      "password": "abc12345",
+      "fullName": "Trần Thị Bình",
+      "role": "customer",
+      "active": true,
+      "createdAt": "2026-03-12T08:00:00Z"
+    },
+    {
+      "id": 4,
+      "email": "cuong@fpt.edu.vn",
+      "password": "cuong2026",
+      "fullName": "Lê Văn Cường",
+      "role": "customer",
+      "active": false,
+      "createdAt": "2026-04-20T08:00:00Z"
+    },
+    {
+      "id": 5,
+      "email": "dung@fpt.edu.vn",
+      "password": "dung12345",
+      "fullName": "Phạm Thị Dung",
+      "role": "admin",
+      "active": true,
+      "createdAt": "2026-05-15T08:00:00Z"
+    },
+    {
+      "id": 6,
+      "email": "em@fpt.edu.vn",
+      "password": "em123456",
+      "fullName": "Hoàng Văn Em",
+      "role": "customer",
+      "active": true,
+      "createdAt": "2026-06-01T08:00:00Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Cơm"
+    },
+    {
+      "id": 2,
+      "name": "Bún – Phở"
+    },
+    {
+      "id": 3,
+      "name": "Đồ uống"
+    },
+    {
+      "id": 4,
+      "name": "Tráng miệng"
+    }
+  ],
+  "dishes": [
+    {
+      "id": 1,
+      "name": "Cơm tấm sườn bì chả",
+      "categoryId": 1,
+      "price": 55000,
+      "discount": 10,
+      "available": true,
+      "spicy": 0,
+      "prepTime": 10,
+      "sold": 320,
+      "rating": 4.7,
+      "image": "https://placehold.co/400x300?text=Dish+1",
+      "description": "Sườn nướng than hoa, bì, chả trứng, mỡ hành."
+    },
+    {
+      "id": 2,
+      "name": "Cơm gà xối mỡ",
+      "categoryId": 1,
+      "price": 50000,
+      "discount": 0,
+      "available": true,
+      "spicy": 1,
+      "prepTime": 12,
+      "sold": 95,
+      "rating": 4.4,
+      "image": "https://placehold.co/400x300?text=Dish+2",
+      "description": "Gà chiên giòn rụm, cơm chiên nghệ."
+    },
+    {
+      "id": 3,
+      "name": "Phở bò tái",
+      "categoryId": 2,
+      "price": 60000,
+      "discount": 0,
+      "available": true,
+      "spicy": 0,
+      "prepTime": 8,
+      "sold": 410,
+      "rating": 4.8,
+      "image": "https://placehold.co/400x300?text=Dish+3",
+      "description": "Nước dùng hầm xương 12 tiếng."
+    },
+    {
+      "id": 4,
+      "name": "Bún bò Huế",
+      "categoryId": 2,
+      "price": 65000,
+      "discount": 20,
+      "available": true,
+      "spicy": 3,
+      "prepTime": 10,
+      "sold": 150,
+      "rating": 4.6,
+      "image": "https://placehold.co/400x300?text=Dish+4",
+      "description": "Bún bò cay nồng chuẩn vị cố đô."
+    },
+    {
+      "id": 5,
+      "name": "Mì Quảng gà",
+      "categoryId": 2,
+      "price": 55000,
+      "discount": 0,
+      "available": false,
+      "spicy": 1,
+      "prepTime": 15,
+      "sold": 60,
+      "rating": 4.3,
+      "image": "https://placehold.co/400x300?text=Dish+5",
+      "description": "Mì Quảng gà ta, bánh tráng mè."
+    },
+    {
+      "id": 6,
+      "name": "Trà đào cam sả",
+      "categoryId": 3,
+      "price": 39000,
+      "discount": 0,
+      "available": true,
+      "spicy": 0,
+      "prepTime": 5,
+      "sold": 500,
+      "rating": 4.5,
+      "image": "https://placehold.co/400x300?text=Dish+6",
+      "description": "Trà đào thơm mát, cam tươi, sả."
+    },
+    {
+      "id": 7,
+      "name": "Cà phê sữa đá",
+      "categoryId": 3,
+      "price": 29000,
+      "discount": 10,
+      "available": true,
+      "spicy": 0,
+      "prepTime": 3,
+      "sold": 100,
+      "rating": 4.9,
+      "image": "https://placehold.co/400x300?text=Dish+7",
+      "description": "Cà phê phin truyền thống."
+    },
+    {
+      "id": 8,
+      "name": "Sinh tố bơ",
+      "categoryId": 3,
+      "price": 45000,
+      "discount": 0,
+      "available": false,
+      "spicy": 0,
+      "prepTime": 6,
+      "sold": 80,
+      "rating": 4.2,
+      "image": "https://placehold.co/400x300?text=Dish+8",
+      "description": "Bơ sáp Đắk Lắk xay cùng sữa đặc."
+    },
+    {
+      "id": 9,
+      "name": "Chè khúc bạch",
+      "categoryId": 4,
+      "price": 35000,
+      "discount": 15,
+      "available": true,
+      "spicy": 0,
+      "prepTime": 5,
+      "sold": 70,
+      "rating": 4.6,
+      "image": "https://placehold.co/400x300?text=Dish+9",
+      "description": "Khúc bạch hạnh nhân, nhãn, vải."
+    },
+    {
+      "id": 10,
+      "name": "Bánh flan",
+      "categoryId": 4,
+      "price": 20000,
+      "discount": 0,
+      "available": true,
+      "spicy": 0,
+      "prepTime": 2,
+      "sold": 220,
+      "rating": 4.4,
+      "image": "https://placehold.co/400x300?text=Dish+10",
+      "description": "Flan caramel mềm mịn."
+    },
+    {
+      "id": 11,
+      "name": "Cơm chiên hải sản cay",
+      "categoryId": 1,
+      "price": 70000,
+      "discount": 5,
+      "available": true,
+      "spicy": 2,
+      "prepTime": 15,
+      "sold": 45,
+      "rating": 4.1,
+      "image": "https://placehold.co/400x300?text=Dish+11",
+      "description": "Tôm, mực, sa tế cay."
+    },
+    {
+      "id": 12,
+      "name": "Bún chả Hà Nội",
+      "categoryId": 2,
+      "price": 60000,
+      "discount": 0,
+      "available": true,
+      "spicy": 0,
+      "prepTime": 12,
+      "sold": 99,
+      "rating": 4.5,
+      "image": "https://placehold.co/400x300?text=Dish+12",
+      "description": "Chả nướng than, nước chấm chua ngọt."
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 2,
+      "receiver": "Nguyễn Văn An",
+      "items": [
+        {
+          "dishId": 1,
+          "quantity": 2,
+          "price": 49500
+        },
+        {
+          "dishId": 6,
+          "quantity": 2,
+          "price": 39000
+        }
+      ],
+      "total": 177000,
+      "status": "delivered",
+      "createdAt": "2026-10-01T11:20:00Z"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "receiver": "Trần Thị Bình",
+      "items": [
+        {
+          "dishId": 3,
+          "quantity": 1,
+          "price": 60000
+        }
+      ],
+      "total": 60000,
+      "status": "pending",
+      "createdAt": "2026-10-02T12:05:00Z"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "receiver": "Nguyễn Văn An",
+      "items": [
+        {
+          "dishId": 4,
+          "quantity": 3,
+          "price": 52000
+        },
+        {
+          "dishId": 10,
+          "quantity": 3,
+          "price": 20000
+        }
+      ],
+      "total": 216000,
+      "status": "confirmed",
+      "createdAt": "2026-10-03T18:40:00Z"
+    },
+    {
+      "id": 4,
+      "userId": 6,
+      "receiver": "Hoàng Văn Em",
+      "items": [
+        {
+          "dishId": 7,
+          "quantity": 4,
+          "price": 26100
+        }
+      ],
+      "total": 104400,
+      "status": "delivered",
+      "createdAt": "2026-10-04T08:15:00Z"
+    },
+    {
+      "id": 5,
+      "userId": 3,
+      "receiver": "Trần Thị Bình",
+      "items": [
+        {
+          "dishId": 12,
+          "quantity": 1,
+          "price": 60000
+        }
+      ],
+      "total": 60000,
+      "status": "cancelled",
+      "createdAt": "2026-10-05T19:30:00Z"
+    },
+    {
+      "id": 6,
+      "userId": 6,
+      "receiver": "Hoàng Văn Em",
+      "items": [
+        {
+          "dishId": 9,
+          "quantity": 2,
+          "price": 29750
+        },
+        {
+          "dishId": 2,
+          "quantity": 1,
+          "price": 50000
+        }
+      ],
+      "total": 109500,
+      "status": "pending",
+      "createdAt": "2026-10-06T20:10:00Z"
+    }
+  ],
+  "reservations": []
+}
