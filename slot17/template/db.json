@@ -1,0 +1,30 @@
+{
+  "users": [
+    {"id": 1, "email": "admin@autoshop.vn", "password": "12345678", "fullName": "Quản trị viên", "role": "admin", "active": true, "createdAt": "2026-01-05T08:00:00Z"},
+    {"id": 2, "email": "khach@autoshop.vn", "password": "12345678", "fullName": "Nguyễn Văn An", "role": "customer", "active": true, "createdAt": "2026-02-10T08:00:00Z"},
+    {"id": 3, "email": "binh@autoshop.vn", "password": "abc12345", "fullName": "Trần Thị Bình", "role": "customer", "active": true, "createdAt": "2026-03-12T08:00:00Z"},
+    {"id": 4, "email": "cuong@autoshop.vn", "password": "cuong2026", "fullName": "Lê Văn Cường", "role": "customer", "active": false, "createdAt": "2026-04-20T08:00:00Z"},
+    {"id": 5, "email": "dung@autoshop.vn", "password": "dung12345", "fullName": "Phạm Thị Dung", "role": "admin", "active": true, "createdAt": "2026-05-15T08:00:00Z"},
+    {"id": 6, "email": "em@autoshop.vn", "password": "em123456", "fullName": "Hoàng Văn Em", "role": "customer", "active": true, "createdAt": "2026-06-01T08:00:00Z"}
+  ],
+  "brands": [
+    {"id": 1, "name": "Toyota"},
+    {"id": 2, "name": "Honda"},
+    {"id": 3, "name": "Hyundai"},
+    {"id": 4, "name": "VinFast"}
+  ],
+  "cars": [
+    {"id": 1, "name": "Toyota Vios G", "brandId": 1, "price": 545000000, "discount": 5, "stock": 6, "year": 2024, "fuel": "Xăng", "image": "/images/1.svg", "description": "Sedan hạng B, số tự động CVT, 7 túi khí.", "createdAt": "2026-09-01T08:00:00Z"},
+    {"id": 2, "name": "Honda City RS", "brandId": 2, "price": 609000000, "discount": 0, "stock": 4, "year": 2024, "fuel": "Xăng", "image": "/images/2.svg", "description": "Sedan thể thao, động cơ 1.5L i-VTEC, Honda Sensing.", "createdAt": "2026-08-15T08:00:00Z"},
+    {"id": 3, "name": "Toyota Camry 2.5Q", "brandId": 1, "price": 1460000000, "discount": 10, "stock": 0, "year": 2023, "fuel": "Xăng", "image": "/images/3.svg", "description": "Sedan hạng D cao cấp, ghế da chỉnh điện, cửa sổ trời.", "createdAt": "2026-07-20T08:00:00Z"},
+    {"id": 4, "name": "VinFast VF 8 Plus", "brandId": 4, "price": 1199000000, "discount": 15, "stock": 3, "year": 2024, "fuel": "Điện", "image": "/images/4.svg", "description": "SUV điện hạng D, quãng đường 457 km/lần sạc.", "createdAt": "2026-09-10T08:00:00Z"},
+    {"id": 5, "name": "Hyundai Tucson", "brandId": 3, "price": 919000000, "discount": 0, "stock": 0, "year": 2023, "fuel": "Dầu", "image": "/images/5.svg", "description": "SUV 5 chỗ, động cơ diesel 2.0L, dẫn động cầu trước.", "createdAt": "2026-06-05T08:00:00Z"},
+    {"id": 6, "name": "Honda CR-V e:HEV", "brandId": 2, "price": 1259000000, "discount": 5, "stock": 2, "year": 2024, "fuel": "Hybrid", "image": "/images/6.svg", "description": "SUV 7 chỗ hybrid, tiêu hao 5,2 L/100 km.", "createdAt": "2026-08-30T08:00:00Z"},
+    {"id": 7, "name": "Hyundai Accent", "brandId": 3, "price": 439000000, "discount": 8, "stock": 10, "year": 2024, "fuel": "Xăng", "image": "/images/7.svg", "description": "Sedan hạng B giá tốt, màn hình 8 inch.", "createdAt": "2026-07-15T08:00:00Z"},
+    {"id": 8, "name": "VinFast VF 5 Plus", "brandId": 4, "price": 529000000, "discount": 0, "stock": 12, "year": 2024, "fuel": "Điện", "image": "/images/8.svg", "description": "SUV điện cỡ nhỏ, quãng đường 326 km/lần sạc.", "createdAt": "2026-05-12T08:00:00Z"},
+    {"id": 9, "name": "Toyota Corolla Cross HEV", "brandId": 1, "price": 955000000, "discount": 12, "stock": 4, "year": 2024, "fuel": "Hybrid", "image": "/images/9.svg", "description": "SUV đô thị động cơ hybrid, tiết kiệm nhiên liệu.", "createdAt": "2026-09-20T08:00:00Z"},
+    {"id": 10, "name": "Hyundai Santa Fe", "brandId": 3, "price": 1365000000, "discount": 10, "stock": 3, "year": 2023, "fuel": "Dầu", "image": "/images/10.svg", "description": "SUV 7 chỗ cỡ lớn, động cơ diesel 2.2L.", "createdAt": "2026-10-01T08:00:00Z"},
+    {"id": 11, "name": "Honda Civic RS", "brandId": 2, "price": 999000000, "discount": 0, "stock": 5, "year": 2024, "fuel": "Xăng", "image": "/images/11.svg", "description": "Sedan hạng C, động cơ 1.5L tăng áp 176 mã lực.", "createdAt": "2026-04-18T08:00:00Z"},
+    {"id": 12, "name": "VinFast VF 6", "brandId": 4, "price": 765000000, "discount": 20, "stock": 7, "year": 2024, "fuel": "Điện", "image": "/images/12.svg", "description": "SUV điện hạng B, hỗ trợ lái ADAS.", "createdAt": "2026-03-25T08:00:00Z"}
+  ]
+}
