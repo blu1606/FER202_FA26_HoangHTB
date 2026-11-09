@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from '../redux/counterReducer';
 import todosReducer from '../redux/reducers/todosReducer';
 import filterReducer from '../redux/reducers/filterReducer';
+import userReducer from '../redux/users/userReducer';
 import cartReducer from '../features/cart/cartSlice';
 import productsReducer from '../features/products/productsSlice';
 import studentsReducer from '../features/students/studentsSlice';
@@ -21,6 +22,7 @@ export const store = configureStore({
     counter: counterReducer,
     todos: todosReducer,
     filter: filterReducer,
+    users: userReducer,
     cart: cartReducer,
     products: productsReducer,
     students: studentsReducer,

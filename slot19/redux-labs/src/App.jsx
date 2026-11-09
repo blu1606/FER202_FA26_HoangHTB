@@ -17,6 +17,10 @@ import TodoForm from './components/TodoForm';
 import FilterBar from './components/FilterBar';
 import TodoList from './components/TodoList';
 
+// Bài 3 Components
+import UserList from './components/UserList';
+import UserPosts from './components/UserPosts';
+
 // Bài 4 Components
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
@@ -72,6 +76,13 @@ export default function App() {
                 Bài 2: Todo List
               </Nav.Link>
               <Nav.Link
+                eventKey="bai3"
+                onClick={() => setActiveTab('bai3')}
+                className="px-3"
+              >
+                Bài 3: Users (Thunk)
+              </Nav.Link>
+              <Nav.Link
                 eventKey="bai4"
                 onClick={() => setActiveTab('bai4')}
                 className="px-3 d-flex align-items-center gap-2"
@@ -124,6 +135,28 @@ export default function App() {
               <FilterBar />
               <TodoList />
             </div>
+          </div>
+        )}
+
+        {/* ==================== BÀI 3: DANH SÁCH USERS & THUNK ==================== */}
+        {activeTab === 'bai3' && (
+          <div>
+            <div className="mb-4">
+              <h3 className="fw-bold text-dark">Bài 3: Danh sách Users & Posts với Redux Thunk</h3>
+              <p className="text-muted small">
+                Xử lý bất đồng bộ trong Redux thuần bằng middleware <code>redux-thunk</code>: mẫu 3 actions (<code>request / success / failure</code>), dispatch thunk với tham số, đọc <code>getState()</code> để tránh gọi lại API khi đã có dữ liệu.
+              </p>
+            </div>
+            <Row className="g-4">
+              <Col md={4}>
+                <h5 className="fw-bold mb-3">👥 Danh sách người dùng</h5>
+                <UserList />
+              </Col>
+              <Col md={8}>
+                <h5 className="fw-bold mb-3">📄 Danh sách bài viết</h5>
+                <UserPosts />
+              </Col>
+            </Row>
           </div>
         )}
 
