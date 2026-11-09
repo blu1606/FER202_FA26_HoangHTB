@@ -40,3 +40,4 @@ export default function Toolbar({ onAdd }) {
     </div>
   );
 }
+

@@ -31,7 +31,7 @@
 | **Slot 15** | Assignment: LaptopStore (Nhóm 7) | Fullstack SPA: JSON Server, Cart, Checkout, My Orders, Admin | [Xem Live](https://laptop-store-group7.vercel.app) \| [Báo cáo (PDF)](slot15/laptop-store-group7/docs/Assignment_FER202_Nhom7.pdf) \| [Video Demo](slot15/laptop-store-group7/docs/demo_walkthrough.mp4) |
 | **Slot 17** | Thực hành Đề mẫu: AutoShop Mini | Car Showroom SPA, Filter, Search, ProtectedRoute, Cart Context | [Xem Demo](/slot17/template/) |
 | **Slot 18** | Thực hành Đề 3: FPT Food Mini | Restaurant SPA, Menu, Dish Detail, Reservation Form, Order Admin | [Xem Demo](/slot18/template/) |
-| **Slot 19** | Redux Core & Redux Toolkit | Bài 1 (Counter thuần), Bài 4 (Giỏ hàng RTK Slice), Bài 5 (CRUD Sinh viên AsyncThunk) | [Xem Demo](/slot19/redux-labs/) |
+| **Slot 19** | Redux Core & Redux Toolkit | Bài 1 (Counter thuần), Bài 2 (Todo List combineReducers), Bài 4 (Giỏ hàng RTK Slice), Bài 5 (CRUD Sinh viên AsyncThunk) | [Xem Demo](/slot19/redux-labs/) |
 
 ---
 

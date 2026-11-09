@@ -12,6 +12,11 @@ import {
 import Counter from './components/Counter';
 import CounterDisplay from './components/CounterDisplay';
 
+// Bài 2 Components
+import TodoForm from './components/TodoForm';
+import FilterBar from './components/FilterBar';
+import TodoList from './components/TodoList';
+
 // Bài 4 Components
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
@@ -57,7 +62,14 @@ export default function App() {
                 onClick={() => setActiveTab('bai1')}
                 className="px-3"
               >
-                Bài 1: Counter (Redux thuần)
+                Bài 1: Counter
+              </Nav.Link>
+              <Nav.Link
+                eventKey="bai2"
+                onClick={() => setActiveTab('bai2')}
+                className="px-3"
+              >
+                Bài 2: Todo List
               </Nav.Link>
               <Nav.Link
                 eventKey="bai4"
@@ -95,6 +107,23 @@ export default function App() {
             </div>
             <Counter />
             <CounterDisplay />
+          </div>
+        )}
+
+        {/* ==================== BÀI 2: TODO LIST ==================== */}
+        {activeTab === 'bai2' && (
+          <div className="mx-auto" style={{ maxWidth: 640 }}>
+            <div className="text-center mb-4">
+              <h3 className="fw-bold text-dark">Bài 2: Todo List với Redux thuần & combineReducers</h3>
+              <p className="text-muted small">
+                Quản lý mảng trong state bất biến (thêm, sửa, xóa, hoàn thành), tách 2 reducer riêng biệt (<code>todos</code> và <code>filter</code>) ghép lại bằng <code>combineReducers</code>.
+              </p>
+            </div>
+            <div className="bg-white p-4 rounded shadow-sm border">
+              <TodoForm />
+              <FilterBar />
+              <TodoList />
+            </div>
           </div>
         )}
 

@@ -56,3 +56,4 @@ export const selectCartTotal = createSelector([selectCartItems], (items) =>
 
 export const selectQtyInCart = (id) => (state) =>
   state.cart.items.find((i) => i.id === id)?.quantity ?? 0;
+

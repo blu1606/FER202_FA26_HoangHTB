@@ -28,3 +28,4 @@ export const PRODUCTS = [
     stock: 4,
   },
 ];
+

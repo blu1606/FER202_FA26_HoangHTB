@@ -23,3 +23,4 @@ export const selectFilteredProducts = createSelector(
   (items, keyword) =>
     items.filter((p) => p.name.toLowerCase().includes(keyword.toLowerCase()))
 );
+

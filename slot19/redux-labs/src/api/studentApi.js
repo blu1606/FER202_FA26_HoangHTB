@@ -8,3 +8,4 @@ export const studentApi = {
   update: (id, data) => http.put(`/students/${id}`, data).then((r) => r.data),
   remove: (id) => http.delete(`/students/${id}`).then(() => id),
 };
+

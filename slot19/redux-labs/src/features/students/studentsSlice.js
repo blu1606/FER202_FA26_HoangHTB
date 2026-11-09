@@ -147,10 +147,10 @@ export const selectVisibleStudents = createSelector(
     const kw = keyword.trim().toLowerCase();
     const filtered = kw
       ? items.filter(
-          (s) =>
-            s.name.toLowerCase().includes(kw) ||
-            s.code.toLowerCase().includes(kw)
-        )
+        (s) =>
+          s.name.toLowerCase().includes(kw) ||
+          s.code.toLowerCase().includes(kw)
+      )
       : items;
     return [...filtered].sort((a, b) =>
       sortBy === 'gpa'
@@ -165,3 +165,4 @@ export const selectAverageGpa = createSelector([selectItems], (items) =>
     ? (items.reduce((s, x) => s + Number(x.gpa), 0) / items.length).toFixed(2)
     : '0.00'
 );
+
