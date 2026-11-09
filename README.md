@@ -28,6 +28,10 @@
 | **Slot 12** | Lab 5: React Router SPA | Nested Routes, useParams, useNavigate, Layout | [Xem Demo](/slot12/lab5/) |
 | **Slot 13** | Exercise 27: Axios HTTP | GET, POST, PUT, PATCH, DELETE, Request Config | [Xem Demo](/slot13/axios/) |
 | **Slot 14** | Lab 6: JSON Server & Axios Pro | NC1–NC10: useAxios, Debounce, Batch Delete, Optimistic UI | [Xem Demo](/slot14/lab6/) |
+| **Slot 15** | Assignment: LaptopStore (Nhóm 7) | Fullstack SPA: JSON Server, Cart, Checkout, My Orders, Admin | [Xem Live](https://laptop-store-group7.vercel.app) \| [Báo cáo (PDF)](slot15/laptop-store-group7/docs/Assignment_FER202_Nhom7.pdf) \| [Video Demo](slot15/laptop-store-group7/docs/demo_walkthrough.mp4) |
+| **Slot 17** | Thực hành Đề mẫu: AutoShop Mini | Car Showroom SPA, Filter, Search, ProtectedRoute, Cart Context | [Xem Demo](/slot17/template/) |
+| **Slot 18** | Thực hành Đề 3: FPT Food Mini | Restaurant SPA, Menu, Dish Detail, Reservation Form, Order Admin | [Xem Demo](/slot18/template/) |
+| **Slot 19** | Redux Core & Redux Toolkit | Bài 1: Counter với Redux thuần (Action, Reducer, Store, Provider) | [Xem Demo](/slot19/redux-labs/) |
 
 ---
 
