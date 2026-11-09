@@ -1,0 +1,28 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "code": "HE170001",
+      "name": "Nguyễn Văn An",
+      "email": "anhe170001@fpt.edu.vn",
+      "gpa": 8.2,
+      "major": "SE"
+    },
+    {
+      "id": "2",
+      "code": "HE170002",
+      "name": "Trần Thị Bình",
+      "email": "binhhe170002@fpt.edu.vn",
+      "gpa": 7.5,
+      "major": "AI"
+    },
+    {
+      "id": "3",
+      "code": "HE170003",
+      "name": "Lê Minh Châu",
+      "email": "chauhe170003@fpt.edu.vn",
+      "gpa": 6.8,
+      "major": "IA"
+    }
+  ]
+}
