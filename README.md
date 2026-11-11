@@ -32,6 +32,7 @@
 | **Slot 17** | Thực hành Đề mẫu: AutoShop Mini | Car Showroom SPA, Filter, Search, ProtectedRoute, Cart Context | [Xem Demo](/slot17/template/) |
 | **Slot 18** | Thực hành Đề 3: FPT Food Mini | Restaurant SPA, Menu, Dish Detail, Reservation Form, Order Admin | [Xem Demo](/slot18/template/) |
 | **Slot 19** | Redux Core & Redux Toolkit | Đầy đủ 5 bài: Counter thuần, Todo List combineReducers, Users Thunk, Giỏ hàng RTK Slice, CRUD Sinh viên AsyncThunk | [Xem Demo](/slot19/redux-labs/) |
+| **Slot 20** | Next.js + Tailwind + RTK (TypeScript) | Bài 1: Khởi tạo project + Store + Counter với bước nhảy tùy chọn | [Xem Demo](/slot20/slot20-next-rtk/) |
 
 ---
 
